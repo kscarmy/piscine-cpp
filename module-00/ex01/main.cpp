@@ -6,12 +6,17 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:56:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/19 21:58:15 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/20 00:19:54 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "main.hpp"
+
+
+
 int	main(void)
 {
-	
+	std::string
+	while ()
 	return (0);
 }
