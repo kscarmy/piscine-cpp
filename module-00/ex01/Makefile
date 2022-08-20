@@ -1,6 +1,8 @@
-NAME = megaphone
+NAME = myawesomephonebook
 
-SRCS = megaphone.cpp
+SRCS = main.cpp \
+		Contact.class.cpp \
+		PhoneBook.class.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 

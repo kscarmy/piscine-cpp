@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 22:07:27 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/20 00:11:52 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/20 14:30:28 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 class Contact {
 public:
 	std::string	GetContact(int i);
+	Contact(void);
 	Contact(std::string c1, std::string c2, std::string c3, std::string c4, std::string c5);
 	~Contact(void);
 private:
