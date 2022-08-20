@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:56:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/20 15:01:24 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/20 15:43:44 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ std::string		ft_entry(void){
 	std::cin >> str;
 	return (str);
 }
+
 
 int				ft_parse_entry(std::string	str, PhoneBook & PB){
 	if (str == "EXIT")
