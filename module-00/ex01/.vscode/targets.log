@@ -8,7 +8,7 @@ make: *** No rule to make target 'main.o', needed by 'myawesomephonebook'.  Stop
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 20 11:00:37 2022
+# Make data base, printed on Sun Aug 21 08:18:30 2022
 
 # Variables
 
@@ -49,7 +49,7 @@ _ = /usr/bin/code
 # makefile (from 'Makefile', line 11)
 CFLAGS = -Wall -Wextra -Werror 
 # environment
-JOURNAL_STREAM = 9:360872
+JOURNAL_STREAM = 9:947092
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -69,13 +69,13 @@ OBJSRCS = $(SRCS:.cpp=.o)
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/32509/bus
 # environment
-MANAGERPID = 49261
+MANAGERPID = 160968
 # environment
 VSCODE_CWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-00/ex01
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_32509_lBI2lC
+KRB5CCNAME = FILE:/tmp/krb5cc_32509_sHS2iN
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +83,7 @@ PATH = /mnt/nfs/homes/guderram/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/32509/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r10p6.clusters.42paris.fr:@/tmp/.ICE-unix/49801,unix/e1r10p6.clusters.42paris.fr:/tmp/.ICE-unix/49801
+SESSION_MANAGER = local/e1r10p6.clusters.42paris.fr:@/tmp/.ICE-unix/161476,unix/e1r10p6.clusters.42paris.fr:/tmp/.ICE-unix/161476
 # environment
 XDG_RUNTIME_DIR = /run/user/32509
 # environment
@@ -91,7 +91,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 6e0ca6187d8d4bc7a318f8e57e7e00be
+INVOCATION_ID = 58fa8c3cbd4840d29488075bdd49b0f7
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -109,7 +109,7 @@ PWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-00/ex01
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 49765
+SSH_AGENT_PID = 161440
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -125,7 +125,7 @@ VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/guderram/.config/Code/CachedData/3b889b0
 # environment
 LOGNAME = guderram
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
@@ -165,7 +165,7 @@ LIBVIRT_DEFAULT_URI = qemu:///system
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/guderram/42
+OLDPWD = /mnt/nfs/homes/guderram/42/piscine-cpp
 # default
 .VARIABLES := 
 # automatic
@@ -201,11 +201,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/99250e9c_d1c9_4080_ad07_953d8016aa7b
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/9d3bcdf8_8be4_461d_a2ee_69cc8e953a2a
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.111
+GNOME_TERMINAL_SERVICE = :1.397
 # default
 SUFFIXES := 
 # environment
@@ -225,7 +225,7 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/32509/docker.sock
 # environment
-VSCODE_PID = 59216
+VSCODE_PID = 167580
 # variable set hash-table stats:
 # Load=107/1024=10%, Rehash=0, Collisions=17/136=12%
 
@@ -235,9 +235,9 @@ VSCODE_PID = 59216
 
 # Directories
 
-# . (device 59, inode 301731710): 10 files, no impossibilities.
+# . (device 59, inode 301731710): 9 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 9 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -280,6 +280,7 @@ fclean: clean
 
 # Not a target:
 Contact.class.o:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -298,7 +299,6 @@ re: fclean all
 
 .cpp.o:
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 19):
@@ -333,12 +333,12 @@ main.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 261 B / avg = 10 B
-# current buf: size = 8162 B / used = 261 B / count = 24 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 23 / storage = 252 B / avg = 10 B
+# current buf: size = 8162 B / used = 252 B / count = 23 / avg = 10 B
 
-# strcache performance: lookups = 44 / hit rate = 45%
+# strcache performance: lookups = 43 / hit rate = 46%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=1/44=2%
-# Finished Make data base on Sat Aug 20 11:00:37 2022
+# Load=23/8192=0%, Rehash=0, Collisions=1/43=2%
+# Finished Make data base on Sun Aug 21 08:18:30 2022
 
  

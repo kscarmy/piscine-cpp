@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:56:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/20 15:43:44 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/21 10:43:14 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int				ft_parse_entry(std::string	str, PhoneBook & PB){
 		return (0);
 	if (str == "ADD")
 		PB.AddContact(ft_add_contact());
+	if (str == "SEARCH")
+		PB.DispList();
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 22:05:29 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/20 15:53:16 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/21 11:57:13 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,31 @@ int	PhoneBook::getindex(void) const{
 
 void	PhoneBook::AddContact(Contact New){
 	this->_cont[this->_index] = New;
+	this->_nbr++;
+	this->_index++;
+	if (this->_index >= 8)
+		this->_index = 0;
+	if (this->_nbr >= 8)
+		this->_nbr = 8;
 }
 
-	void	PhoneBook::DispList(void) const{
-		for
+	void	PhoneBook::DispList(void) {
+		int in;
+		std::string str;
+		in = - 1;
+		for (int i = 0; i < this->_nbr; i++)
+		{
+			std::cout << i << "      |";
+			for (int u = 0; u < 3; u++){
+				std::cout << _cont[i].GetContact(u) << "|";}
+			std::cout << std::endl;
+		}
+		while (in < 0 && in > 8){
+		std::cout << "Index : ";
+		std::cin >> str;
+		in = std::stoi(str);
+		std::cout << std::endl;}
+		for (int u = 0; u < 5; u++){
+			std::cout << _cont[in].GetContact(u) << "|";}
 	}
+	

@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 22:00:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/20 15:53:01 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/21 10:42:27 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ public:
 	~PhoneBook();
 	int		getindex(void) const;
 	void	AddContact(Contact New);
-	void	DispList(void) const;
+	void	DispList(void) ;
 
 private:
 	Contact 	_cont[8];
