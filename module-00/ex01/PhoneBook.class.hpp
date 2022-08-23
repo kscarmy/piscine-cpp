@@ -6,14 +6,17 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 22:00:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/21 10:42:27 by guderram         ###   ########.fr       */
+/*   Updated: 2022/08/23 16:50:01 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
-
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
+# include <string>
+# include <iostream>
+# include <iomanip>
+# include "Contact.class.hpp"
+
 
 class PhoneBook
 {
@@ -21,8 +24,11 @@ public:
 	PhoneBook();
 	~PhoneBook();
 	int		getindex(void) const;
+	int		getnbr(void) const;
 	void	AddContact(Contact New);
-	void	DispList(void) ;
+	void	DispList(void);
+	bool 	ft_is_digits(const std::string &str);
+	void	DispOne(int i);
 
 private:
 	Contact 	_cont[8];

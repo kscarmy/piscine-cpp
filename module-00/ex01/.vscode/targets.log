@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'main.o', needed by 'myawesomephonebook'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'main.o', needed by 'myawesomephonebook'.  Stop
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Aug 21 08:18:30 2022
+# Make data base, printed on Tue Aug 23 14:10:53 2022
 
 # Variables
 
@@ -49,7 +47,7 @@ _ = /usr/bin/code
 # makefile (from 'Makefile', line 11)
 CFLAGS = -Wall -Wextra -Werror 
 # environment
-JOURNAL_STREAM = 9:947092
+JOURNAL_STREAM = 9:2184213
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -69,13 +67,13 @@ OBJSRCS = $(SRCS:.cpp=.o)
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/32509/bus
 # environment
-MANAGERPID = 160968
+MANAGERPID = 361685
 # environment
 VSCODE_CWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-00/ex01
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_32509_sHS2iN
+KRB5CCNAME = FILE:/tmp/krb5cc_32509_WqAU7g
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +81,7 @@ PATH = /mnt/nfs/homes/guderram/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/32509/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r10p6.clusters.42paris.fr:@/tmp/.ICE-unix/161476,unix/e1r10p6.clusters.42paris.fr:/tmp/.ICE-unix/161476
+SESSION_MANAGER = local/e1r10p6.clusters.42paris.fr:@/tmp/.ICE-unix/362224,unix/e1r10p6.clusters.42paris.fr:/tmp/.ICE-unix/362224
 # environment
 XDG_RUNTIME_DIR = /run/user/32509
 # environment
@@ -91,7 +89,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 58fa8c3cbd4840d29488075bdd49b0f7
+INVOCATION_ID = 23cee4135bad4605b34230093355acaa
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -109,7 +107,7 @@ PWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-00/ex01
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 161440
+SSH_AGENT_PID = 362188
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -201,11 +199,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/9d3bcdf8_8be4_461d_a2ee_69cc8e953a2a
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/6bd2f924_c320_4cfa_a586_af0173ba92da
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.397
+GNOME_TERMINAL_SERVICE = :1.110
 # default
 SUFFIXES := 
 # environment
@@ -225,7 +223,7 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/32509/docker.sock
 # environment
-VSCODE_PID = 167580
+VSCODE_PID = 364043
 # variable set hash-table stats:
 # Load=107/1024=10%, Rehash=0, Collisions=17/136=12%
 
@@ -281,6 +279,8 @@ fclean: clean
 # Not a target:
 Contact.class.o:
  
+make: *** No rule to make target 'main.o', needed by 'myawesomephonebook'.  Stop.
+
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -339,6 +339,6 @@ main.o:
 # strcache performance: lookups = 43 / hit rate = 46%
 # hash-table stats:
 # Load=23/8192=0%, Rehash=0, Collisions=1/43=2%
-# Finished Make data base on Sun Aug 21 08:18:30 2022
+# Finished Make data base on Tue Aug 23 14:10:53 2022
 
  
