@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 26 19:57:59 2022
+# Make data base, printed on Sat Aug 27 11:25:17 2022
 
 # Variables
 
@@ -35,7 +33,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /mnt/nfs/homes/guderram/42/piscine-cpp/module-01
+CURDIR := /mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex04
 # makefile
 SHELL = /bin/sh
 # environment
@@ -46,12 +44,14 @@ VTE_VERSION = 6003
 VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"c7e2ab29f04a1f7605fe59032ea1fa0d.fr","_translationsConfigFile":"/mnt/nfs/homes/guderram/.config/Code/clp/c7e2ab29f04a1f7605fe59032ea1fa0d.fr/tcf.json","_cacheRoot":"/mnt/nfs/homes/guderram/.config/Code/clp/c7e2ab29f04a1f7605fe59032ea1fa0d.fr","_resolvedLanguagePackCoreLocation":"/mnt/nfs/homes/guderram/.config/Code/clp/c7e2ab29f04a1f7605fe59032ea1fa0d.fr/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/mnt/nfs/homes/guderram/.config/Code/clp/c7e2ab29f04a1f7605fe59032ea1fa0d.fr/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/bin/code
+# makefile (from 'Makefile', line 9)
+CFLAGS = -Wall -Wextra -Werror 
 # environment
-JOURNAL_STREAM = 9:3988710
+JOURNAL_STREAM = 9:4670602
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile
-MAKEFILE_LIST := 
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # automatic
 @F = $(notdir $@)
 # environment
@@ -62,16 +62,18 @@ GNUMAKEFLAGS :=
 MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/guderram/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# makefile (from 'Makefile', line 5)
+OBJSRCS = $(SRCS:.cpp=.o)
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/32509/bus
 # environment
-MANAGERPID = 720707
+MANAGERPID = 841820
 # environment
-VSCODE_CWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-01
+VSCODE_CWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex04
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session10
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session12
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_32509_tfiJmc
+KRB5CCNAME = FILE:/tmp/krb5cc_32509_LyHZxg
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -79,7 +81,7 @@ PATH = /mnt/nfs/homes/guderram/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # environment
 GPG_AGENT_INFO = /run/user/32509/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/e1r10p6.clusters.42paris.fr:@/tmp/.ICE-unix/721244,unix/e1r10p6.clusters.42paris.fr:/tmp/.ICE-unix/721244
+SESSION_MANAGER = local/e1r10p6.clusters.42paris.fr:@/tmp/.ICE-unix/849836,unix/e1r10p6.clusters.42paris.fr:/tmp/.ICE-unix/849836
 # environment
 XDG_RUNTIME_DIR = /run/user/32509
 # environment
@@ -87,7 +89,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 48ab4c696dba412a893c5dbc8daf4ec2
+INVOCATION_ID = 9f6009e923e34e73b6a05decb65e9ed8
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -101,11 +103,11 @@ SSH_AUTH_SOCK = /run/user/32509/keyring/ssh
 # environment
 DISPLAY = :0
 # environment
-PWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-01
+PWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex04
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 721208
+SSH_AGENT_PID = 849799
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -140,14 +142,18 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
+# makefile (from 'Makefile', line 3)
+SRCS = main.cpp 
 # environment
 SHLVL = 2
+# makefile (from 'Makefile', line 7)
+CC = g++
 # default
 MAKE_VERSION := 4.2.1
 # environment
 USER = guderram
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := Sed_is_for_losers
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -157,7 +163,7 @@ LIBVIRT_DEFAULT_URI = qemu:///system
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex01
+OLDPWD = /mnt/nfs/homes/guderram
 # default
 .VARIABLES := 
 # automatic
@@ -193,11 +199,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5da62203_f89a_4d80_bb6b_876349278476
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c004231e_fa69_4b40_a13f_1d34dbff34dc
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.122
+GNOME_TERMINAL_SERVICE = :1.136
 # default
 SUFFIXES := 
 # environment
@@ -206,6 +212,8 @@ CHROME_DESKTOP = code-url-handler.desktop
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 1)
+NAME = Sed_is_for_losers
 # default
 .RECIPEPREFIX := 
 # environment
@@ -215,9 +223,9 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/32509/docker.sock
 # environment
-VSCODE_PID = 744055
+VSCODE_PID = 856177
 # variable set hash-table stats:
-# Load=102/1024=10%, Rehash=0, Collisions=9/124=7%
+# Load=107/1024=10%, Rehash=0, Collisions=17/136=12%
 
 # Pattern-specific Variable Values
 
@@ -225,9 +233,9 @@ VSCODE_PID = 744055
 
 # Directories
 
-# . (device 59, inode 302520462): 8 files, no impossibilities.
+# . (device 59, inode 308942382): 7 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 7 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -235,26 +243,33 @@ VSCODE_PID = 744055
 
 # Files
 
-# Not a target:
-all:
+all: Sed_is_for_losers
+#  Phony target (prerequisite of .PHONY).
 #  Command line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all re clean fclean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-08-26 19:56:04.710312602
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
+fclean: clean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 23):
+	rm -f $(NAME)
 
 # Not a target:
 .DEFAULT:
@@ -262,28 +277,57 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-GNUmakefile:
-#  Implicit rule search has been done.
+re: fclean all
+ 
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has not been updated.
+
+.cpp.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 17):
+	$(CC) $(CFLAGS) -c $<
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 20):
+	rm -f $(OBJSRCS)
+
+Sed_is_for_losers: main.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-26 19:56:20.086407851
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 12):
+	$(CC) $(CFLAGS) $(OBJSRCS) -o $(NAME)
+
+# Not a target:
+main.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 19:56:20.017407424
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
+# Load=11/1024=1%, Rehash=0, Collisions=0/31=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 123 B / avg = 7 B
-# current buf: size = 8162 B / used = 123 B / count = 16 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 17 / storage = 141 B / avg = 8 B
+# current buf: size = 8162 B / used = 141 B / count = 17 / avg = 8 B
 
-# strcache performance: lookups = 19 / hit rate = 15%
+# strcache performance: lookups = 39 / hit rate = 56%
 # hash-table stats:
- 
-# Load=16/8192=0%, Rehash=0, Collisions=1/19=5%
-# Finished Make data base on Fri Aug 26 19:57:59 2022
+# Load=17/8192=0%, Rehash=0, Collisions=1/39=3%
+# Finished Make data base on Sat Aug 27 11:25:17 2022
 
  
