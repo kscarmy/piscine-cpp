@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Aug 27 11:25:17 2022
+# Make data base, printed on Sat Aug 27 16:02:42 2022
 
 # Variables
 
@@ -123,7 +123,7 @@ VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/guderram/.config/Code/CachedData/3b889b0
 # environment
 LOGNAME = guderram
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
@@ -163,7 +163,7 @@ LIBVIRT_DEFAULT_URI = qemu:///system
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/guderram
+OLDPWD = /mnt/nfs/homes/guderram/42/piscine-cpp/module-01
 # default
 .VARIABLES := 
 # automatic
@@ -199,11 +199,11 @@ LC_ALL = C
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/c004231e_fa69_4b40_a13f_1d34dbff34dc
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/29b23147_fa40_4b40_a0ae_a8b7921758ba
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.136
+GNOME_TERMINAL_SERVICE = :1.820
 # default
 SUFFIXES := 
 # environment
@@ -223,7 +223,7 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/32509/docker.sock
 # environment
-VSCODE_PID = 856177
+VSCODE_PID = 891160
 # variable set hash-table stats:
 # Load=107/1024=10%, Rehash=0, Collisions=17/136=12%
 
@@ -328,6 +328,6 @@ main.o:
 # strcache performance: lookups = 39 / hit rate = 56%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/39=3%
-# Finished Make data base on Sat Aug 27 11:25:17 2022
+# Finished Make data base on Sat Aug 27 16:02:42 2022
 
  
