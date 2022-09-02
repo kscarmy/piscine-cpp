@@ -4,17 +4,17 @@ SRCS = main.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 
-CC = g++
+jean = g++
 
 CFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 $(NAME): $(OBJSRCS)
-	$(CC) $(CFLAGS) $(OBJSRCS) -o $(NAME)
+	$(jean) $(CFLAGS) $(OBJSRCS) -o $(NAME)
 
 all: $(NAME)
 
 .cpp.o:
-	$(CC) $(CFLAGS) -c $<
+	$(jean) $(CFLAGS) -c $<
 
 clean:
 	rm -f $(OBJSRCS)
