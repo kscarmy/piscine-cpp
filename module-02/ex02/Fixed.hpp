@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 08:40:14 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/28 10:54:49 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:25:17 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ class Fixed
 	Fixed	&operator--(void);
 	Fixed	operator--(int);
 	
+	Fixed min(Fixed const &a, Fixed const &b);
 	
 	private:
 	int			_val;

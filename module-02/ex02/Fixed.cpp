@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 08:40:09 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/28 10:54:41 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:33:54 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ Fixed Fixed::operator-(Fixed const &fixed){
 Fixed Fixed::operator*(Fixed const &fixed){
 	Fixed	ret;
 	if (CALL) std::cout << "op *" << std::endl;
-	ret.setRawBits((this->getRawBits() >> this->_bit) * fixed.getRawBits());
+	ret.setRawBits((this->getRawBits()) * fixed.getRawBits()  >> this->_bit);
 	return (ret); }
 
 Fixed Fixed::operator/(Fixed const &fixed){
@@ -119,3 +119,10 @@ Fixed	&Fixed::operator--(void)
 
 Fixed	Fixed::operator--(int)
 	{ Fixed Ret(*this); _val -= 1; return (Ret) ;}
+
+
+
+Fixed Fixed::min(Fixed const &a, Fixed const &b){
+	if (CALL) std::cout << "min const" << std::endl;
+	Fixed	ret = (a.getRawBits() < b.getRawBits() ? a : b);
+	return (ret); }
