@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:56:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/23 16:50:27 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/28 13:02:12 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ std::string		ft_entry_contact(std::string str){
 }
 
 Contact			ft_add_contact(void){
+	std::string ret;
+	std::getline(std::cin, ret);
 	std::string	fn = ft_entry_contact("Prenom : ");
 	std::string	ln = ft_entry_contact("Nom : ");
 	std::string	nn = ft_entry_contact("Surnom : ");
