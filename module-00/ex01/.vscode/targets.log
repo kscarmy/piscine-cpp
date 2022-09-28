@@ -147,7 +147,7 @@ SRCS = main.cpp Contact.class.cpp PhoneBook.class.cpp
 # environment
 SHLVL = 2
 # makefile (from 'Makefile', line 9)
-CC = g++
+CC = c++
 # default
 MAKE_VERSION := 4.2.1
 # environment

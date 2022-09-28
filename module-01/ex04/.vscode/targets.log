@@ -147,7 +147,7 @@ SRCS = main.cpp
 # environment
 SHLVL = 2
 # makefile (from 'Makefile', line 7)
-CC = g++
+CC = c++
 # default
 MAKE_VERSION := 4.2.1
 # environment

@@ -149,7 +149,7 @@ SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 # environment
 SHLVL = 2
 # makefile (from 'Makefile', line 10)
-CC = g++
+CC = c++
 # default
 MAKE_VERSION := 4.2.1
 # environment

@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/08 17:18:47 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/28 10:58:51 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,18 @@ int main( void )
 	// std::cout << F
 
 	Fixed a;
-	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+
+	Fixed c = 2.5f;
+	std::cout << c << std::endl;
+	std::cout << c * 2 << std::endl;
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
-// std::cout << b
+
+	std::cout << b << std::endl;
 
 
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 08:40:14 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/08 17:06:42 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/28 10:54:49 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
+
+# define CALL 0
 
 class Fixed
 {
@@ -51,6 +53,10 @@ class Fixed
 
 	Fixed	&operator++(void);
 	Fixed	operator++(int);
+
+	Fixed	&operator--(void);
+	Fixed	operator--(int);
+	
 	
 	private:
 	int			_val;
