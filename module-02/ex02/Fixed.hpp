@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 08:40:14 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/28 13:25:17 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/29 10:09:06 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ class Fixed
 
 
 
-	bool operator>(Fixed const &fixed);
-	bool operator<(Fixed const &fixed);
+	bool operator>(Fixed const &fixed) const;
+	bool operator<(Fixed const &fixed) const;
 
-	bool operator>=(Fixed const &fixed);
-	bool operator<=(Fixed const &fixed);
+	bool operator>=(Fixed const &fixed) const;
+	bool operator<=(Fixed const &fixed) const;
 
-	bool operator==(Fixed const &fixed);
-	bool operator!=(Fixed const &fixed);
+	bool operator==(Fixed const &fixed) const;
+	bool operator!=(Fixed const &fixed) const;
 
-	Fixed operator+(Fixed const &fixed);
-	Fixed operator-(Fixed const &fixed);
-	Fixed operator*(Fixed const &fixed);
-	Fixed operator/(Fixed const &fixed);
+	Fixed operator+(Fixed const &fixed) const;
+	Fixed operator-(Fixed const &fixed) const;
+	Fixed operator*(Fixed const &fixed) const;
+	Fixed operator/(Fixed const &fixed) const;
 
 	Fixed	&operator++(void);
 	Fixed	operator++(int);
@@ -57,8 +57,13 @@ class Fixed
 	Fixed	&operator--(void);
 	Fixed	operator--(int);
 	
-	Fixed min(Fixed const &a, Fixed const &b);
-	
+
+	static Fixed	&min(Fixed &a, Fixed &b);
+	static const Fixed	&min(Fixed const &a, Fixed const &b);
+
+	static Fixed	&max(Fixed &a, Fixed &b);
+	static const Fixed	&max(Fixed const &a, Fixed const &b);
+
 	private:
 	int			_val;
 	static int	const	_bit;
