@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/04 08:40:14 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/30 18:08:18 by guderram         ###   ########.fr       */
+/*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
+/*   Updated: 2022/09/30 18:17:46 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
-# include "ClapTrap.hpp"
-# include <iostream>
-
-
-# define CALL 1
-
-class ScavTrap : public ClapTrap
+int main( void )
 {
-	public:
+	FragTrap jean;
+	FragTrap jeannot("jeannot");
 
-	ScavTrap();
-	ScavTrap(std::string Name);
-	~ScavTrap();
+	for (int i = 0; i<2; i++)
+		jean.attack("un lapin");
 
-	void attack(const std::string& target);
+	for (int i = 0; i<2; i++)
+		jeannot.takeDamage(1);
 
-	void guardGate();
-};
+	for (int i = 0; i<2; i++)
+		jeannot.beRepaired(1);
 
+	jean.highFivesGuys();
+	jeannot.highFivesGuys();
 
-#endif
+	return 0;
+}

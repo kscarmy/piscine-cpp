@@ -6,21 +6,22 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 08:40:09 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/30 12:50:45 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:27:23 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+// #include "ClapTrap.hpp"
 
-	ClapTrap::ClapTrap(void) : _Name("default"), _Hit(10), _EnergyPoints(10), _AttackDamage(0){
-	if (CALL) { std::cout << "DEFAULT CONSTRUCTOR CALL" << std::endl; }	}
+	ClapTrap::ClapTrap(void) : _Name("default"), _Hit(100), _EnergyPoints(50), _AttackDamage(20){
+	if (CALL) { std::cout << "DEFAULT ClapTrap CONSTRUCTOR CALL" << std::endl; }	}
 
 
-	ClapTrap::ClapTrap(std::string Name) : _Name(Name), _Hit(10), _EnergyPoints(10), _AttackDamage(0){
-	if (CALL) { std::cout << "NAME CONSTRUCTOR CALL" << std::endl; }	}
+	ClapTrap::ClapTrap(std::string Name) : _Name(Name), _Hit(100), _EnergyPoints(50), _AttackDamage(20){
+	if (CALL) { std::cout << "NAME ClapTrap CONSTRUCTOR CALL" << std::endl; }	}
 
 	ClapTrap::~ClapTrap(void){
-	if (CALL) { std::cout << "DEFAULT DESTRUCTOR CALL" << std::endl; }	}
+	if (CALL) { std::cout << "DEFAULT ClapTrap DESTRUCTOR CALL" << std::endl; }	}
 
 
 	void ClapTrap::attack(const std::string& target){

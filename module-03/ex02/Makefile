@@ -1,7 +1,8 @@
-NAME =   ClapTrap
+NAME =   FragTrap
 
 SRCS = main.cpp \
 		ClapTrap.cpp \
+		FragTrap.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 

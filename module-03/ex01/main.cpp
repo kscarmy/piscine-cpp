@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/30 18:05:59 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/30 18:12:37 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int main( void )
 
 	for (int i = 0; i<2; i++)
 		jeannot.beRepaired(1);
+
+	jean.guardGate();
+	jeannot.guardGate();
 
 	return 0;
 }
