@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/02 17:48:32 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/30 11:33:18 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ int	ft_open(char *f_src){
 
 int main(int argc, char **argv)
 {
-
+	std::string F_Arg = std::string(argv[1]) + ".replace";
 	if (argc != 4){std::cout << "Les comptes sont pas bon" << std::endl; return (0);}
 	if (ft_chgeck_argv(std::string(argv[1]), std::string(argv[2])) == 0){return 0;}
 	if (ft_open(argv[1]) == 0){ return 0; }
-	std::ofstream ret (std::string(argv[1]) += ".replace");
+
+	std::ofstream ret (F_Arg.c_str());
+
 	std::ifstream file_src (argv[1]);
 	std::string s1 = (argv[2]);
 	std::string s2 = (argv[3]);

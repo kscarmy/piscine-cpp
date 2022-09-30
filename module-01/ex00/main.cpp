@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 21:56:35 by guderram          #+#    #+#             */
-/*   Updated: 2022/08/26 11:59:38 by guderram         ###   ########.fr       */
+/*   Updated: 2022/09/30 10:20:24 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 int	main(void)
 {
 	Zombie* za = newZombie("jean");
+	
 	randomChump("jeannot");
+	
 	delete za;
 	return (0);
 }
