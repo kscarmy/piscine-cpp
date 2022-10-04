@@ -5,9 +5,10 @@
 */
 
 Dog::Dog() : _type("Dog"){
+	_oneBrain = new Brain();
 	if (CALL) std::cout << "Dog DEFAULT CONSTRUCTOR" << std::endl;}
 
-Dog::Dog( const Dog & src ) : _type(src._type){
+Dog::Dog( const Dog & src ) : _type(src._type), _oneBrain(src._oneBrain){
 	if (CALL) std::cout << "Dog COPY CONSTRUCTOR" << std::endl;}
 
 
@@ -16,6 +17,7 @@ Dog::Dog( const Dog & src ) : _type(src._type){
 */
 
 Dog::~Dog(){
+	delete _oneBrain;
 	if (CALL) std::cout << "Dog DEFAULT DESTRUCTOR" << std::endl;}
 
 

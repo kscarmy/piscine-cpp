@@ -1,29 +1,31 @@
-#include "Dog.hpp"
+#include "Cat.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog() : _type("Dog"){
-	if (CALL) std::cout << "Dog DEFAULT CONSTRUCTOR" << std::endl;}
+Cat::Cat() : _type("Cat"){
+	_oneBrain = new Brain();
+	if (CALL) std::cout << "Cat DEFAULT CONSTRUCTOR" << std::endl;}
 
-Dog::Dog( const Dog & src ) : _type(src._type){
-	if (CALL) std::cout << "Dog COPY CONSTRUCTOR" << std::endl;}
+Cat::Cat( const Cat & src ): _type(src._type), _oneBrain(src._oneBrain){
+	if (CALL) std::cout << "Cat COPY CONSTRUCTOR" << std::endl;}
 
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog(){
-	if (CALL) std::cout << "Dog DEFAULT DESTRUCTOR" << std::endl;}
+Cat::~Cat(){
+	delete _oneBrain;
+	if (CALL) std::cout << "Cat DEFAULT DESTRUCTOR" << std::endl;}
 
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Dog &				Dog::operator=( Dog const & rhs )
+// Cat &				Cat::operator=( Cat const & rhs )
 // {
 // 	//if ( this != &rhs )
 // 	//{
@@ -32,7 +34,7 @@ Dog::~Dog(){
 // 	return *this;
 // }
 
-// std::ostream &			operator<<( std::ostream & o, Dog const & i )
+// std::ostream &			operator<<( std::ostream & o, Cat const & i )
 // {
 // 	//o << "Value = " << i.getValue();
 // 	return o;
@@ -43,10 +45,10 @@ Dog::~Dog(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
-	void	Dog::makeSound(void)	const{
-		std::cout << _type << " sound like Woof" << std::endl;}
-	
-	std::string	Dog::getType(void)	const{
+	void	Cat::makeSound(void)	const{
+		std::cout << _type << " sound like Meow" << std::endl;}
+
+	std::string	Cat::getType(void)	const{
 		return (this->_type);}
 
 /*
