@@ -1,30 +1,31 @@
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog() : _type("Dog"){
-	if (CALL) std::cout << "Dog DEFAULT CONSTRUCTOR" << std::endl;}
+WrongAnimal::WrongAnimal() : _type("WrongAnimal"){
+	if (CALL) std::cout << "WrongAnimal DEFAULT CONSTRUCTOR" << std::endl;}
 
-Dog::Dog( const Dog & src ) : _type(src._type){
-	if (CALL) std::cout << "Dog DEFAULT CONSTRUCTOR" << std::endl;}
+WrongAnimal::WrongAnimal( const WrongAnimal & src ) : _type(src._type){
+	if (CALL) std::cout << "WrongAnimal COPY CONSTRUCTOR" << std::endl;}
 
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog(){
-	if (CALL) std::cout << "Dog DEFAULT DESTRUCTOR" << std::endl;}
+WrongAnimal::~WrongAnimal(){
+	if (CALL) std::cout << "WrongAnimal DEFAULT DESTRUCTOR" << std::endl;}
 
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Dog &				Dog::operator=( Dog const & rhs )
+// WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 // {
+// 	// rhs;
 // 	//if ( this != &rhs )
 // 	//{
 // 		//this->_value = rhs.getValue();
@@ -32,7 +33,7 @@ Dog::~Dog(){
 // 	return *this;
 // }
 
-// std::ostream &			operator<<( std::ostream & o, Dog const & i )
+// std::ostream &			operator<<( std::ostream & o, WrongAnimal const & i )
 // {
 // 	//o << "Value = " << i.getValue();
 // 	return o;
@@ -43,10 +44,10 @@ Dog::~Dog(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
-	void	Dog::makeSound(void)	const{
-		std::cout << _type << " sound like Woof" << std::endl;}
-	
-	std::string	Dog::getType(void)	const{
+	void	WrongAnimal::makeSound(void)	const{
+		std::cout << _type << " sound 'Inauduble'" << std::endl;}
+
+	std::string	WrongAnimal::getType(void)	const{
 		return (this->_type);}
 
 /*

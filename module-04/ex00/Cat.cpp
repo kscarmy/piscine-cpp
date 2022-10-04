@@ -16,7 +16,7 @@ Cat::Cat( const Cat & src ): _type(src._type){
 */
 
 Cat::~Cat(){
-	if (CALL) std::cout << "Animal DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL) std::cout << "Cat DEFAULT DESTRUCTOR" << std::endl;}
 
 
 /*
@@ -43,6 +43,11 @@ Cat::~Cat(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
+	void	Cat::makeSound(void)	const{
+		std::cout << _type << " sound like Meow" << std::endl;}
+
+	std::string	Cat::getType(void)	const{
+		return (this->_type);}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

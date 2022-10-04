@@ -13,7 +13,10 @@ class Cat : public Animal
 
 		Cat();
 		Cat( Cat const & src );
-		~Cat();
+		virtual	~Cat();
+
+		virtual	void	makeSound(void)	const;
+		virtual	std::string	getType(void)	const;
 
 		Cat &		operator=( Cat const & rhs );
 

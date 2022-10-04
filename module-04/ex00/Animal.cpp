@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal() : _type(0){
+Animal::Animal() : _type("Animal"){
 	if (CALL) std::cout << "Animal DEFAULT CONSTRUCTOR" << std::endl;}
 
 Animal::Animal( const Animal & src ) : _type(src._type){
@@ -44,6 +44,11 @@ Animal::~Animal(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
+	void	Animal::makeSound(void)	const{
+		std::cout << _type << " sound 'Inauduble'" << std::endl;}
+
+	std::string	Animal::getType(void)	const{
+		return (this->_type);}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
