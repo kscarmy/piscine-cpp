@@ -3,7 +3,10 @@
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
 # define CALL 1
+
+class Form;
 
 class Bureaucrat
 {
@@ -20,6 +23,7 @@ class Bureaucrat
 
 		void		increment(void);
 		void		decrement(void);
+		void		signForm(Form& src);
 
 		class		GradeTooHighException : public std::exception {
 					public:

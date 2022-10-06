@@ -41,7 +41,6 @@ Form::~Form(){
 	if (CALL){std::cout << "-- Form DEFAULT DESTRUCTOR" << std::endl;}
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
@@ -55,31 +54,58 @@ Form::~Form(){
 // 	return *this;
 // }
 
-// std::ostream &			operator<<( std::ostream & o, Form const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
+std::ostream &			operator<<( std::ostream & o, Form const & i )
+{
+	o << i.getName() << " Form is sign ? " << i.getisSign() << " need ";
+	o << i.getgoSign() << " for sign and " << i.getExec() << " for execution !";
+	return o;
+}
 
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+	int	Form::beSigned(const Bureaucrat& src){
+		try{
+			if (src.getGrade() > this->getgoSign()) {throw Form::GradeTooLowException();}
+			else	{this->_isSign = true; return (0);}
+		}
+		catch(const std::exception& e){
+			std::cout << e.what() << std::endl;
+		}
+		return (1);
+	}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+	std::string	Form::getName(void)	const{
+		return (_Name);
+	}
+
+	bool		Form::getisSign(void)	const{
+		return (_isSign);
+	}
+
+	int		Form::getgoSign(void)	const{
+		return (_goSign);
+	}
+
+	int		Form::getExec(void)	const{
+		return (_Exec);
+	}
 
 /*
 ** --------------------------------- EXCEPTION ---------------------------------
 */
 
 	const	char	*Form::GradeTooHighException::what() const	throw(){
-		return ("Maximum grade is 1");
+		return ("Maximum grade is not good");
 	}
 	const	char	*Form::GradeTooLowException::what() const	throw(){
-		return ("Minimum grade is 150");
+		return ("Minimum grade is not good");
 	}
 
 /* ************************************************************************** */

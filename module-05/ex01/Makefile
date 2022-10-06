@@ -2,6 +2,7 @@ NAME =   Form
 
 SRCS = main.cpp \
 		Bureaucrat.cpp \
+		Form.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 
