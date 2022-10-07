@@ -98,6 +98,24 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 		else {std::cout << this->getName() << " signed " << src.getName() << std::endl;}
 	}
 
+	void		Bureaucrat::executeForm(AForm const & form){
+		try{
+			if (form.getisSign() != true) { throw AForm::FormNotSigned(); }
+			else	if (form.getExec() > this->getGrade()) { throw AForm::GradeTooLowException(); }
+			// else	{ form. ;}
+	}
+
+	catch (const AForm::GradeTooHighException& e){
+		std::cout << e.what() << std::endl;
+	}
+	catch (const AForm::GradeTooLowException& e){
+		std::cout << e.what() << std::endl;
+	}
+	catch (const AForm::FormNotSigned& e){
+		std::cout << e.what() << std::endl;
+	}
+	}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

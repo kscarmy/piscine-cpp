@@ -16,7 +16,7 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm( PresidentialPardonForm const & src );
 		~PresidentialPardonForm();
 
-		// void	
+		virtual	void	andAction(void)	const;
 		// PresidentialPardonForm &		operator=( PresidentialPardonForm const & rhs );
 
 	private:

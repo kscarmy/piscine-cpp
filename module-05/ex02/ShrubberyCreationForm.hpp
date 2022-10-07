@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 # include "AForm.hpp"
 # define CALL 1
 
@@ -16,7 +17,7 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();
 
-		// void	
+		virtual void	andAction(void)	const;
 		// ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
 	private:

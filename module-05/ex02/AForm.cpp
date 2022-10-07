@@ -1,4 +1,5 @@
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -77,6 +78,29 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 		return (1);
 	}
 
+	void	AForm::execute(Bureaucrat const & executor)	const{
+	try{
+		// std::cout << this->getExec() << " exec " << executor.getGrade() << " grade" << std::endl;
+		if (this->getisSign() != true) { throw AForm::FormNotSigned(); }
+		else	if (this->getExec() < executor.getGrade()) {  throw AForm::GradeTooLowException(); }
+		else	{this->andAction();}
+	}
+
+	catch (const AForm::GradeTooHighException& e){
+		std::cout << e.what() << std::endl;
+	}
+	catch (const AForm::GradeTooLowException& e){
+		std::cout << e.what() << std::endl;
+	}
+	catch (const AForm::FormNotSigned& e){
+		std::cout << e.what() << std::endl;
+	}
+}
+
+	void	AForm::andAction(void)	const{
+		return ;
+	}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
@@ -97,6 +121,10 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 		return (_Exec);
 	}
 
+	std::string	AForm::getTarget(void)	const{
+		return (_Target);
+	}
+
 /*
 ** --------------------------------- EXCEPTION ---------------------------------
 */
@@ -106,6 +134,9 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 	}
 	const	char	*AForm::GradeTooLowException::what() const	throw(){
 		return ("Minimum grade is not good");
+	}
+	const	char	*AForm::FormNotSigned::what() const	throw(){
+		return ("This Form is not signed before Executed !");
 	}
 
 /* ************************************************************************** */

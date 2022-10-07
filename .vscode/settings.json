@@ -27,6 +27,7 @@
 		"cmath": "cpp",
 		"cstdio": "cpp",
 		"limits": "cpp",
-		"numbers": "cpp"
+		"numbers": "cpp",
+		"fstream": "cpp"
 	}
 }

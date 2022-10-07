@@ -4,11 +4,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 25, 5, "Idefix"){
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137, "Idefix"){
 	if (CALL){std::cout << "-- ShrubberyCreationForm DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const	std::string	Target) : AForm("ShrubberyCreationForm", 25, 5, Target){
+ShrubberyCreationForm::ShrubberyCreationForm(const	std::string	Target) : AForm("ShrubberyCreationForm", 145, 137, Target){
 	if (CALL){std::cout << "-- ShrubberyCreationForm MAIN CONSTRUCTOR" << std::endl;}
 }
 
@@ -48,6 +48,21 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	ShrubberyCreationForm::andAction(void)	const{
+
+	std::string F_Arg = this->getTarget() + "_shrubbery";
+	std::ofstream ret (F_Arg.c_str());
+	ret << "       _-_        " << "       _-_        " << std::endl;
+	ret << "    /~~   ~~\\    " << "    /~~   ~~\\    " << std::endl;
+	ret << " /~~         ~~\\ " << " /~~         ~~\\ " << std::endl;
+	ret << "{               } " << "{               } " << std::endl;
+	ret << " \\  _-     -_  / " << " \\  _-     -_  / " << std::endl;
+	ret << "   ~  \\ //  ~    " << "   ~  \\ //  ~    " << std::endl;
+	ret << "_- -   | | _- _   " << "_- -   | | _- _   " << std::endl;
+	ret << "  _ -  | |   -_   " << "  _ -  | |   -_   " << std::endl;
+	ret << "      // \\       " << "      // \\       " << std::endl;
+	ret.close();
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

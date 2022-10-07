@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include "AForm.hpp"
+# include <stdlib.h>
 # define CALL 1
 
 class RobotomyRequestForm : public AForm
@@ -16,7 +17,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		~RobotomyRequestForm();
 
-		// void	
+		virtual	void	andAction(void)	const;
 		// RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 	private:

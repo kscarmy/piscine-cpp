@@ -22,8 +22,11 @@ class AForm
 		bool		getisSign(void)	const;
 		int			getgoSign(void)	const;
 		int			getExec(void)	const;
+		std::string	getTarget(void)	const;
 		
-		int		beSigned(const Bureaucrat& src);
+		int				beSigned(const Bureaucrat& src);
+		void			execute(Bureaucrat const & executor)	const;
+		virtual	void	andAction(void)							const;
 
 
 		class		GradeTooHighException : public std::exception {
@@ -31,6 +34,10 @@ class AForm
 						virtual const char *what() const throw();
 		};
 		class		GradeTooLowException : public std::exception {
+					public:
+						virtual const char *what() const throw();
+		};
+		class		FormNotSigned : public std::exception {
 					public:
 						virtual const char *what() const throw();
 		};

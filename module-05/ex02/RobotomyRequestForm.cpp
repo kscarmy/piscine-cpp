@@ -4,11 +4,11 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 25, 5, "Idefix"){
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45, "Idefix"){
 	if (CALL){std::cout << "-- RobotomyRequestForm DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const	std::string	Target) : AForm("RobotomyRequestForm", 25, 5, Target){
+RobotomyRequestForm::RobotomyRequestForm(const	std::string	Target) : AForm("RobotomyRequestForm", 72, 45, Target){
 	if (CALL){std::cout << "-- RobotomyRequestForm MAIN CONSTRUCTOR" << std::endl;}
 }
 
@@ -48,6 +48,19 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	RobotomyRequestForm::andAction(void)	const{
+	std::cout << "'VRRRRRRRRrrrrrr VRRRRRRRRrrrrrr VRRRRRRRRrrrrrr'" << std::endl;
+	std::cout << "'VRRRRRRRRrrrrrr VRRRRRRRRrrrrrr VRRRRRRRRrrrrrr'" << std::endl;
+	srand(time(0));
+	int i = rand();
+	// std::cout << i << " " << i % 2 << std::endl;
+	if (i % 2 == 0){
+		std::cout << this->getTarget() << " has been Robotomysed !!!" << std::endl;
+	}
+	else{
+		std::cout <<  "Robotomy on " << this->getTarget() << " has fail !!!" << std::endl;
+	}
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

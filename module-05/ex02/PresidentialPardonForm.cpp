@@ -48,6 +48,9 @@ PresidentialPardonForm::~PresidentialPardonForm(){
 ** --------------------------------- METHODS ----------------------------------
 */
 
+void	PresidentialPardonForm::andAction(void)	const{
+	std::cout << this->getTarget() << " has been pardonned by Zaphod Beeblebrox ! (H2G2)" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
