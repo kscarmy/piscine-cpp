@@ -26,6 +26,7 @@
 		"string_view": "cpp",
 		"cmath": "cpp",
 		"cstdio": "cpp",
-		"limits": "cpp"
+		"limits": "cpp",
+		"numbers": "cpp"
 	}
 }
