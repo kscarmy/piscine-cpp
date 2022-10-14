@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   isSomeThing.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/14 15:13:35 by guderram         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:17:13 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,21 +99,4 @@ bool	isDouble(std::string str){
 	if (std::atof(str.c_str()) < __DBL_MIN__)
 		return false;
 	return true;
-}
-
-int main( int argc, char **argv )
-{
-	// std::cout << "min : " << __FLT_MIN__ << " max : " << __FLT_MAX__ << std::endl;
-	if (argc != 2){
-		std::cout << "Le programme prend deux arguments" << std::endl; return 0;
-	}
-	std::string str = argv[1];
-	std::cout << "is char : " << isChar(str) << std::endl;
-	std::cout << "is int : " << isInt(str) << std::endl;
-	std::cout << "is float : " << isFloat(str) << std::endl;
-	std::cout << "is double : " << isDouble(str) << std::endl;
-	// argv = NULL;
-	/***************************************/
-
-	return 0;
 }
