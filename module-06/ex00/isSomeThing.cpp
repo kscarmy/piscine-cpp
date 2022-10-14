@@ -6,15 +6,15 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/14 15:17:13 by guderram         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:36:40 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include <string>
-# include <limits.h>
-# include <stdlib.h>
+# include "convert.hpp"
 
+/****************************/
+/*			Utils			*/
+/****************************/
 
 bool	isCharIn(std::string src, char c){
 	int nbr = 0;
@@ -45,6 +45,10 @@ bool	findMeOtherString(std::string src, bool flo){
 	return false;
 }
 
+/****************************/
+/*			Char			*/
+/****************************/
+
 bool	isChar(std::string str){
 	if (str.size() != 1)
 		return (false);
@@ -54,6 +58,10 @@ bool	isChar(std::string str){
 		return (false);
 	return true;
 }
+
+/****************************/
+/*			Int				*/
+/****************************/
 
 bool	isInt(std::string str){
 	for (unsigned long i=0; i < str.size(); i++){
@@ -66,6 +74,10 @@ bool	isInt(std::string str){
 		return false;
 	return true;
 }
+
+/****************************/
+/*			Float			*/
+/****************************/
 
 bool	isFloat(std::string str){
 	if (findMeOtherString(str, true))
@@ -84,6 +96,10 @@ bool	isFloat(std::string str){
 		return false;
 	return true;
 }
+
+/****************************/
+/*			Doubles			*/
+/****************************/
 
 bool	isDouble(std::string str){
 	if (findMeOtherString(str, false))

@@ -1,6 +1,7 @@
 NAME =   convert
 
 SRCS = main.cpp \
+		isSomeThing.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 
