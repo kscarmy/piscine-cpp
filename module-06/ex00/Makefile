@@ -2,6 +2,10 @@ NAME =   convert
 
 SRCS = main.cpp \
 		isSomeThing.cpp \
+		char.cpp \
+		int.cpp \
+		float.cpp \
+		double.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 
