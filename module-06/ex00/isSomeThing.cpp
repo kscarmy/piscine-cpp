@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/14 15:36:40 by guderram         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:53:17 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 /****************************/
 /*			Utils			*/
 /****************************/
+
+bool	findStr(std::string src, std::string str){
+	std::size_t found = src.find(str);
+	if (found != std::string::npos && (found + str.size()) == src.size())
+		return true;
+	return false;
+}
 
 bool	isCharIn(std::string src, char c){
 	int nbr = 0;

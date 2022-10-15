@@ -11,6 +11,7 @@
 /*			isSomeThing.cpp			*/
 /************************************/
 
+bool	findStr(std::string src, std::string str);
 bool	isCharIn(std::string src, char c);
 bool	findMeDigit(char c, std::string info);
 bool	findMeOtherString(std::string src, bool flo);

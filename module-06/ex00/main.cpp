@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/14 18:14:06 by guderram         ###   ########.fr       */
+/*   Updated: 2022/10/15 15:56:55 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,26 +30,14 @@ int main( int argc, char **argv )
 
 	/***************************************/
 	/*	Detection Type	*/
+	
 	std::cout << "is char : " << isChar(str) << std::endl;
 	std::cout << "is int : " << isInt(str) << std::endl;
 	std::cout << "is float : " << isFloat(str) << std::endl;
 	std::cout << "is double : " << isDouble(str) << std::endl;
 
 	/***************************************/
-
-	
 	/*	First Conv	*/
-	// char	c;
-	// int		i;
-	// float	f;
-	// double	d;
-
-	// d = std::atof(str.c_str());
-	
-	// char c = 0;
-
-
-	// std::cout << c << std::endl;
 
 	if (isChar(str))
 		goChar(str);
