@@ -1,7 +1,6 @@
 NAME =   Array
 
 SRCS = main.cpp \
-		Array.cpp \
 
 OBJSRCS = $(SRCS:.cpp=.o)
 
