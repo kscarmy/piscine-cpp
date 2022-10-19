@@ -3,8 +3,11 @@
 
 # include <iostream>
 # include <string>
+# include <algorithm>
 # include <vector>
-# define CALL 1
+# include <iterator>
+#include <limits.h>
+# define CALL 0
 
 
 class Span
@@ -17,8 +20,15 @@ class Span
 		~Span();
 
 		void	addNumber(int nbr);
+		int		shortestSpan(void)	const;
+		int		longestSpan(void)	const;
 
 		class SpanFull: public std::exception{
+			public:
+				virtual const char *what() const throw();
+		};
+
+		class SpanIndexWrong: public std::exception{
 			public:
 				virtual const char *what() const throw();
 		};
