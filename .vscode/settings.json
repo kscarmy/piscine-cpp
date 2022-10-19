@@ -28,6 +28,15 @@
 		"cstdio": "cpp",
 		"limits": "cpp",
 		"numbers": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"array": "cpp",
+		"deque": "cpp",
+		"list": "cpp",
+		"map": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"functional": "cpp",
+		"tuple": "cpp",
+		"utility": "cpp"
 	}
 }
