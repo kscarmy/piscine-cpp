@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 08:40:14 by guderram          #+#    #+#             */
-/*   Updated: 2022/09/08 14:21:51 by guderram         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:52:09 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,6 @@ class Fixed
 
 std::ostream &operator<<(std::ostream &out, Fixed const &fixed);
 
-std::ostream &operator>(std::ostream &out, Fixed const &fixed);
+// std::ostream &operator>(std::ostream &out, Fixed const &fixed);
 
 #endif
