@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/04 13:56:17 by guderram         ###   ########.fr       */
+/*   Updated: 2023/03/23 02:32:08 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,14 @@ int main( void )
 	const WrongAnimal* michel = new WrongCat();
 	const WrongCat* olas = new WrongCat();
 
-	std::cout << jean->getType() << " " << std::endl;
-	std::cout << michel->getType() << " " << std::endl;
-	std::cout << olas->getType() << " " << std::endl;
+	std::cout << std::endl;
+	std::cout << "jean " << jean->getType() << " " << std::endl;
 	jean->makeSound();
+
+	std::cout  << "michel " << michel->getType() << " " << std::endl;
 	michel->makeSound();
+	
+	std::cout  << "olas " << olas->getType() << " " << std::endl;
 	olas->makeSound();
 
 	delete jean;
