@@ -16,8 +16,8 @@ Dog::Dog( const Dog & src ) : _type(src._type), _oneBrain(src._oneBrain){
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Dog::~Dog(){
-	delete _oneBrain;
+Dog::~Dog(){ // 2
+	delete _oneBrain; // 3
 	if (CALL) std::cout << "Dog DEFAULT DESTRUCTOR" << std::endl;}
 
 
