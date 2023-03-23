@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2023/03/23 02:32:08 by guderram         ###   ########.fr       */
+/*   Updated: 2023/03/23 03:51:07 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,18 @@ int main( void )
 	/***************************************/
 
 	const Dog* a = new Dog();
+	const Dog* bernard = new Dog(*a); 
 	const Cat* b = new Cat();
 	
 	std::cout << a->getType() << " " << std::endl;
 	std::cout << b->getType() << " " << std::endl;
 	a->makeSound();
 	b->makeSound();
+	bernard->makeSound();
 
 	delete a;
 	delete b;
+	delete bernard;
 	
 	std::cout << std::endl << std::endl;
 	
