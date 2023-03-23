@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/06 18:01:01 by guderram         ###   ########.fr       */
+/*   Updated: 2023/03/23 07:37:39 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ int main( void )
 	}
 	std::cout << jean.getName() << " has grade " << jean.getGrade() << std::endl;
 
+	std::cout << std::endl << "-------------------" << std::endl << std::endl;
+	
 	vraipier.beSigned(jean);
-	// jean.signForm(vraipier);
+	jean.signForm(vraipier);
 	
 	std::cout << papier << std::endl;
 	std::cout << vraipier << std::endl;
