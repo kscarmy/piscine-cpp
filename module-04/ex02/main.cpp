@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/04 15:45:46 by guderram         ###   ########.fr       */
+/*   Updated: 2023/03/23 06:00:13 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,12 @@ int main( void )
 
 	const Dog* a = new Dog();
 	const Cat* b = new Cat();
-	std::cout << "COPY :" << std::endl;
-	const Dog* ca = new Dog(*a);
-	const Cat* cb = new Cat(*b);
 	
 	std::cout << a->getType() << " " << std::endl;
 	std::cout << b->getType() << " " << std::endl;
 	a->makeSound();
 	b->makeSound();
 
-	std::cout << ca->getType() << " " << std::endl;
-	std::cout << cb->getType() << " " << std::endl;
-	ca->makeSound();
-	cb->makeSound();
 
 	delete a;
 	delete b;
@@ -70,9 +63,9 @@ int main( void )
 		else			{troupeau[i] = new Cat();}
 	}
 
-	// for (int i=0;i<4;i++){
-	// 	troupeau[i].
-	// }
+	for (int i=0;i<4;i++){
+		troupeau[i]->makeSound();
+	}
 
 	for (int i=0;i<4;i++){
 		delete troupeau[i];
