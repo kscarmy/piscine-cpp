@@ -26,6 +26,5 @@ class WrongCat : public WrongAnimal
 
 };
 
-std::ostream &			operator<<( std::ostream & o, WrongCat const & i );
 
 #endif /* ************************************************************* WrongCat_H */

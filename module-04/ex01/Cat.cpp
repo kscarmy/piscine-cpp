@@ -25,20 +25,16 @@ Cat::~Cat(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Cat &				Cat::operator=( Cat const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+Cat &				Cat::operator=( Cat const & rhs )
+{
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+		this->_oneBrain = rhs._oneBrain;
+	}
+	return *this;
+}
 
-// std::ostream &			operator<<( std::ostream & o, Cat const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
 
 
 /*

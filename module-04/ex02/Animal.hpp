@@ -18,7 +18,7 @@ class Animal
 		virtual	void	makeSound(void)	const = 0;
 		virtual	std::string	getType(void)	const = 0;
 
-		// virtual	Animal &		operator=( Animal const & rhs );
+		virtual	Animal &		operator=( Animal const & rhs );
 
 	private:
 
@@ -28,6 +28,5 @@ class Animal
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Animal const & i );
 
 #endif /* ********************************************************** ANIMAL_H */

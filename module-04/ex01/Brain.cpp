@@ -30,20 +30,16 @@ Brain::~Brain(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Brain &				Brain::operator=( Brain const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
-
-// std::ostream &			operator<<( std::ostream & o, Brain const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
+Brain &				Brain::operator=( Brain const & rhs )
+{
+	if ( this != &rhs )
+	{
+		for(int i=0; i<100; i++){
+			this->_ideas[i] = rhs._ideas[i];
+		}
+	}
+	return *this;
+}
 
 
 /*

@@ -23,20 +23,16 @@ WrongCat::~WrongCat(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// WrongCat &				WrongCat::operator=( WrongCat const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+WrongCat &				WrongCat::operator=( WrongCat const & rhs )
+{
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+	}
+	return *this;
+}
 
-// std::ostream &			operator<<( std::ostream & o, WrongCat const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
+
 
 
 /*

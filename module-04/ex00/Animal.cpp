@@ -32,21 +32,14 @@ Animal::~Animal()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Animal &				Animal::operator=( Animal const & rhs )
-// {
-// 	// rhs;
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
-
-// std::ostream &			operator<<( std::ostream & o, Animal const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
+Animal &				Animal::operator=( Animal const & rhs )
+{
+	if ( this != &rhs )
+	{
+		this->_type = rhs._type;
+	}
+	return *this;
+}
 
 
 /*
