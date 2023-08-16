@@ -8,7 +8,8 @@ Cat::Cat() : _type("Cat"){
 	_oneBrain = new Brain();
 	if (CALL) std::cout << "Cat DEFAULT CONSTRUCTOR" << std::endl;}
 
-Cat::Cat( const Cat & src ): _type(src._type), _oneBrain(src._oneBrain){
+Cat::Cat( const Cat & src ) {
+	*this = src;
 	if (CALL) std::cout << "Cat COPY CONSTRUCTOR" << std::endl;}
 
 
@@ -17,7 +18,8 @@ Cat::Cat( const Cat & src ): _type(src._type), _oneBrain(src._oneBrain){
 */
 
 Cat::~Cat(){
-	delete _oneBrain;
+	if (_oneBrain)
+		delete _oneBrain;
 	if (CALL) std::cout << "Cat DEFAULT DESTRUCTOR" << std::endl;}
 
 
@@ -25,14 +27,14 @@ Cat::~Cat(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &				Cat::operator=( Cat const & rhs )
+Cat& Cat::operator=( const Cat& src )
 {
-	if ( this != &rhs )
-	{
-		this->_type = rhs._type;
-		this->_oneBrain = rhs._oneBrain;
-	}
-	return *this;
+    if (this != &src)
+    {
+        this->_type = src._type;
+        this->_oneBrain = new Brain( *src._oneBrain );
+    }
+    return *this;
 }
 
 

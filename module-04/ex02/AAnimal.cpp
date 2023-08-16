@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -28,7 +28,6 @@ Animal &				Animal::operator=( Animal const & rhs )
 	if ( this != &rhs )
 	{
 		this->_type = rhs._type;
-		this->_oneBrain = rhs._oneBrain;
 	}
 	return *this;
 }

@@ -5,10 +5,11 @@
 */
 
 Dog::Dog() : _type("Dog"){
-	_oneBrain = new Brain();
+	this->_oneBrain = new Brain();
 	if (CALL) std::cout << "Dog DEFAULT CONSTRUCTOR" << std::endl;}
 
-Dog::Dog( const Dog & src ) : _type(src._type), _oneBrain(src._oneBrain){
+Dog::Dog( const Dog & src ) {
+	*this = src; 
 	if (CALL) std::cout << "Dog COPY CONSTRUCTOR" << std::endl;}
 
 
@@ -17,7 +18,7 @@ Dog::Dog( const Dog & src ) : _type(src._type), _oneBrain(src._oneBrain){
 */
 
 Dog::~Dog(){
-	delete _oneBrain;
+	delete this->_oneBrain;
 	if (CALL) std::cout << "Dog DEFAULT DESTRUCTOR" << std::endl;}
 
 
@@ -25,14 +26,14 @@ Dog::~Dog(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Dog &				Dog::operator=( Dog const & rhs )
+Dog& Dog::operator=( const Dog& src )
 {
-	if ( this != &rhs )
-	{
-		this->_type = rhs._type;
-		this->_oneBrain = rhs._oneBrain;
-	}
-	return *this;
+    if (this != &src)
+    {
+        this->_type = src._type;
+        this->_oneBrain = new Brain( *src._oneBrain );
+    }
+    return *this;
 }
 
 

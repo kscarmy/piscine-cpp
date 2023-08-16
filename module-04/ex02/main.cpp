@@ -6,11 +6,11 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2023/03/23 06:00:13 by guderram         ###   ########.fr       */
+/*   Updated: 2023/08/16 16:56:22 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
@@ -22,6 +22,16 @@ int main( void )
 {
 	/***************************************/
 
+
+	Dog basic;
+    {
+        Dog tmp = basic;
+    }
+
+	Cat sylvestre;
+    {
+        Cat titi = sylvestre;
+    }
 	// const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();

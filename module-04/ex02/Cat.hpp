@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 # define CALL 1
 
@@ -14,12 +14,12 @@ class Cat : public Animal
 
 		Cat();
 		Cat( Cat const & src );
-		virtual	~Cat();
+		~Cat();
 
-		virtual	void	makeSound(void)	const;
-		virtual	std::string	getType(void)	const;
+		void	makeSound(void)	const;
+		std::string	getType(void)	const;
 
-		Cat &		operator=( Cat const & rhs );
+		Cat &		operator=( Cat const & src );
 
 	private:
 		std::string	_type;
