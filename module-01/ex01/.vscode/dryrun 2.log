@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex01'
+ 
+g++ -Wall -Wextra -Werror  -c main.cpp
+g++ -Wall -Wextra -Werror  -c Zombie.cpp
+make: Leaving directory '/mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex01'
+ 
+make: *** No rule to make target 'newZombie.o', needed by 'Moar_brain'.
+make: *** No rule to make target 'randomChump.o', needed by 'Moar_brain'.
+

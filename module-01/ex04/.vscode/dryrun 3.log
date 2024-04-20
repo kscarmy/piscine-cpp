@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex04'
+g++ -Wall -Wextra -Werror  -c main.cpp
+g++ -Wall -Wextra -Werror  main.o -o Sed_is_for_losers
+make: Leaving directory '/mnt/nfs/homes/guderram/42/piscine-cpp/module-01/ex04'
+ 
