@@ -42,14 +42,14 @@ class AForm
 						virtual const char *what() const throw();
 		};
 
-		// AForm &		operator=( AForm const & rhs );
+		AForm &		operator=( AForm const & rhs );
 
 	private:
-		std::string	_Name;
-		bool		_isSign;
-		int			_goSign;
-		int			_Exec;
-		std::string	_Target;
+		std::string	const	_Name;
+		bool				_isSign;
+		int			const	_goSign;
+		int			const	_Exec;
+		std::string			_Target;
 
 
 };

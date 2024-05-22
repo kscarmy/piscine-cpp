@@ -29,20 +29,23 @@ Intern::~Intern(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Intern &				Intern::operator=( Intern const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+Intern &				Intern::operator=( Intern const & rhs )
+{
+	if ( this != &rhs )
+	{
+		// this->_value = rhs.getValue();
+		this->_NameForm = rhs._NameForm;
+		this->_TargetForm = rhs._TargetForm;
+	}
+	return *this;
+}
 
-// std::ostream &			operator<<( std::ostream & o, Intern const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
+std::ostream &			operator<<( std::ostream & o, Intern const & i )
+{
+	//o << "Value = " << i.getValue();
+	o << i.getNameForm() << " intern has " << i.getTargetForm() << " target";
+	return o;
+}
 
 
 /*

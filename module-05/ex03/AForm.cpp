@@ -11,13 +11,15 @@ AForm::AForm() : _Name("DEFAULT"), _isSign(false), _goSign(1), _Exec(1), _Target
 
 AForm::AForm(std::string Name, int goSign, int Exec, std::string Target) : _Name(Name), _isSign(false), _goSign(goSign), _Exec(Exec), _Target(Target){
 	try {
-		if (goSign < 1 ) { _goSign = 1; throw AForm::GradeTooHighException();}
-		else	if (goSign > 150 ) { _goSign = 1; throw AForm::GradeTooLowException();}
-		else	{_goSign = goSign;}
+		if (goSign < 1 )	{
+			throw AForm::GradeTooHighException();}
+		else	if (goSign > 150 )	{
+			throw AForm::GradeTooLowException();}
 
-		if (Exec < 1 ) { _Exec = 1; throw AForm::GradeTooHighException();}
-		else	if (Exec > 150 ) { _Exec = 1; throw AForm::GradeTooLowException();}
-		else	{_Exec = Exec;}
+		if (Exec < 1 )	{	
+			throw AForm::GradeTooHighException();}
+		else	if (Exec > 150 )	{
+			throw AForm::GradeTooLowException();}
 	}
 
 	catch (const AForm::GradeTooHighException& e){
@@ -46,14 +48,16 @@ AForm::~AForm(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Form &				AForm::operator=( Form const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+AForm &				AForm::operator=( AForm const & rhs )
+{
+	if ( this != &rhs )
+	{
+		// this->_value = rhs.getValue();
+		this->_isSign = rhs._isSign;
+		this->_Target = rhs._Target;
+	}
+	return *this;
+}
 
 std::ostream &			operator<<( std::ostream & o, AForm const & i )
 {

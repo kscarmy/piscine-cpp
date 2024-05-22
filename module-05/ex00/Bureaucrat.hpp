@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # define CALL 1
+
 class Bureaucrat
 {
 
@@ -24,18 +25,20 @@ class Bureaucrat
 					public:
 						virtual const char *what() const throw();
 		};
+
 		class		GradeTooLowException : public std::exception {
 					public:
 						virtual const char *what() const throw();
 		};
 
-		// Bureaucrat &		operator=( Bureaucrat const & rhs );
+		Bureaucrat &		operator=( Bureaucrat const & rhs );
 
 	private:
-		const	std::string	_Name;
+		std::string	const	_Name;
 		int		_Grade;
 };
 
 std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i );
 
 #endif /* ****************************************************** BUREAUCRAT_H */
+

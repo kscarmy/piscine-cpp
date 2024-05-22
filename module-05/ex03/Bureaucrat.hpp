@@ -35,7 +35,7 @@ class Bureaucrat
 						virtual const char *what() const throw();
 		};
 
-		// Bureaucrat &		operator=( Bureaucrat const & rhs );
+		Bureaucrat &		operator=( Bureaucrat const & rhs );
 
 	private:
 		const	std::string	_Name;

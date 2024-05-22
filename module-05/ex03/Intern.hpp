@@ -29,7 +29,7 @@ class Intern
 						virtual const char *what() const throw();
 		};
 
-		// Intern &		operator=( Intern const & rhs );
+		Intern &		operator=( Intern const & rhs );
 
 	private:
 		std::string		_NameForm;
@@ -37,6 +37,6 @@ class Intern
 
 };
 
-// std::ostream &			operator<<( std::ostream & o, Intern const & i );
+std::ostream &			operator<<( std::ostream & o, Intern const & i );
 
 #endif /* ********************************************************** INTERN_H */

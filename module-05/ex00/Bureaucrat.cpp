@@ -10,9 +10,12 @@ Bureaucrat::Bureaucrat() : _Name("DEFAULT"), _Grade(150){
 
 Bureaucrat::Bureaucrat(std::string	Name, int Grade) : _Name(Name){
 	try {
-		if (Grade < 1 ) { _Grade = 150; throw Bureaucrat::GradeTooHighException();}
-		else	if (Grade > 150 ) { _Grade = 150; throw Bureaucrat::GradeTooLowException();}
-		else	{_Grade = Grade;}
+		if (Grade < 1 ) {
+			_Grade = 150; throw Bureaucrat::GradeTooHighException();	}
+		else	if (Grade > 150 ) {
+			_Grade = 150; throw Bureaucrat::GradeTooLowException();	}
+		else	{
+			_Grade = Grade;	}
 	}
 	catch (const Bureaucrat::GradeTooHighException& e){
 		std::cout << e.what() << std::endl;
@@ -24,7 +27,8 @@ Bureaucrat::Bureaucrat(std::string	Name, int Grade) : _Name(Name){
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _Name(src._Name), _Grade(src._Grade){
-	if (CALL){std::cout << "-- Bureaucrat COPY CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Bureaucrat COPY CONSTRUCTOR" << std::endl;}
 }
 
 
@@ -33,7 +37,8 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _Name(src._Name), _Grade(src.
 */
 
 Bureaucrat::~Bureaucrat(){
-	if (CALL){std::cout << "-- Bureaucrat DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Bureaucrat DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 
@@ -41,14 +46,15 @@ Bureaucrat::~Bureaucrat(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
+{
+	if ( this != &rhs )
+	{
+		// this->_Name = rhs._Name;
+		this->_Grade = rhs._Grade;
+	}
+	return *this;
+}
 
 std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 {
@@ -59,7 +65,7 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 
 /*
 ** --------------------------------- METHODS ----------------------------------
-*/
+*/	
 
 
 

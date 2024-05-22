@@ -35,13 +35,13 @@ class Form
 						virtual const char *what() const throw();
 		};
 
-		// Form &		operator=( Form const & rhs );
+		Form &		operator=( Form const & rhs );
 
 	private:
-		std::string	_Name;
-		bool		_isSign;
-		int			_goSign;
-		int			_Exec;
+		std::string	const	_Name;
+		bool				_isSign;
+		int			const	_goSign;
+		int			const	_Exec;
 
 };
 

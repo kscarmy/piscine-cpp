@@ -8,15 +8,17 @@ Form::Form() : _Name("DEFAULT"), _isSign(false), _goSign(1), _Exec(1){
 	if (CALL){std::cout << "-- Form DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
-Form::Form(std::string Name, int goSign, int Exec) : _Name(Name), _isSign(false), _goSign(goSign), _Exec(Exec){
+Form::Form(std::string const Name, int const goSign, int const Exec) : _Name(Name), _isSign(false), _goSign(goSign), _Exec(Exec){
 	try {
-		if (goSign < 1 ) { _goSign = 1; throw Form::GradeTooHighException();}
-		else	if (goSign > 150 ) { _goSign = 1; throw Form::GradeTooLowException();}
-		else	{_goSign = goSign;}
+		if (goSign < 1 )	{
+			throw Form::GradeTooHighException();}
+		else	if (goSign > 150 )	{
+			throw Form::GradeTooLowException();}
 
-		if (Exec < 1 ) { _Exec = 1; throw Form::GradeTooHighException();}
-		else	if (Exec > 150 ) { _Exec = 1; throw Form::GradeTooLowException();}
-		else	{_Exec = Exec;}
+		if (Exec < 1 )	{	
+			throw Form::GradeTooHighException();}
+		else	if (Exec > 150 )	{
+			throw Form::GradeTooLowException();}
 	}
 
 	catch (const Form::GradeTooHighException& e){
@@ -45,14 +47,15 @@ Form::~Form(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// Form &				Form::operator=( Form const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+Form &				Form::operator=( Form const & rhs )
+{
+	if ( this != &rhs )
+	{
+		// this->_value = rhs.getValue();
+		this->_isSign = rhs._isSign;
+	}
+	return *this;
+}
 
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
