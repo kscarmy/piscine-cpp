@@ -18,11 +18,11 @@ class RobotomyRequestForm : public AForm
 		~RobotomyRequestForm();
 
 		virtual	void	andAction(void)	const;
-		// RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
+		RobotomyRequestForm &		operator=( RobotomyRequestForm const & rhs );
 
 	private:
 };
 
-// std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i );
+std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i );
 
 #endif /* ****************************************** RobotomyRequestForm_H */

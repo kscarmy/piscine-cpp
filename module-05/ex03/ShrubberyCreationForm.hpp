@@ -18,11 +18,11 @@ class ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 
 		virtual void	andAction(void)	const;
-		// ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
+		ShrubberyCreationForm &		operator=( ShrubberyCreationForm const & rhs );
 
 	private:
 };
 
-// std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
+std::ostream &			operator<<( std::ostream & o, ShrubberyCreationForm const & i );
 
 #endif /* ****************************************** ShrubberyCreationForm_H */

@@ -28,20 +28,22 @@ RobotomyRequestForm::~RobotomyRequestForm(){
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-// RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
-// {
-// 	//if ( this != &rhs )
-// 	//{
-// 		//this->_value = rhs.getValue();
-// 	//}
-// 	return *this;
-// }
+RobotomyRequestForm &				RobotomyRequestForm::operator=( RobotomyRequestForm const & rhs )
+{
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
+	AForm::operator=(rhs);
+	return *this;
+}
 
-// std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
+std::ostream &			operator<<( std::ostream & o, RobotomyRequestForm const & i )
+{
+	//o << "Value = " << i.getValue();
+	(void)i;
+	return o;
+}
 
 
 /*
