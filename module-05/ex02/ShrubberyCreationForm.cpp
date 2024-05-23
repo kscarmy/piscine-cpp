@@ -5,15 +5,18 @@
 */
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137, "Idefix"){
-	if (CALL){std::cout << "-- ShrubberyCreationForm DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- ShrubberyCreationForm DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const	std::string	Target) : AForm("ShrubberyCreationForm", 145, 137, Target){
-	if (CALL){std::cout << "-- ShrubberyCreationForm MAIN CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- ShrubberyCreationForm MAIN CONSTRUCTOR" << std::endl;}
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src ) : AForm(src){
-	if (CALL){std::cout << "-- ShrubberyCreationForm COPY CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- ShrubberyCreationForm COPY CONSTRUCTOR" << std::endl;}
 }
 
 /*
@@ -21,7 +24,8 @@ ShrubberyCreationForm::ShrubberyCreationForm( const ShrubberyCreationForm & src 
 */
 
 ShrubberyCreationForm::~ShrubberyCreationForm(){
-	if (CALL){std::cout << "-- ShrubberyCreationForm DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- ShrubberyCreationForm DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 /*

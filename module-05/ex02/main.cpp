@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2023/03/23 07:44:51 by guderram         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:52:49 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#define LECTURE 0
+#define LECTURE 1
 
 int main( void )
 {
@@ -33,7 +33,7 @@ int main( void )
 	if (LECTURE) std::cout << "D ----------" << std::endl;
 	asterix.signForm(papier);
 	if (LECTURE) std::cout << "E ----------" << std::endl;
-	// std::cout << asterix.getGrade() << " grade ob" << std::endl;
+	std::cout << asterix.getGrade() << " grade ob" << std::endl;
 	papier.execute(asterix);
 	if (LECTURE) std::cout << "F ----------" << std::endl;
 	for (int i=0; i<10; i++){

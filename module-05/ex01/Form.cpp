@@ -8,7 +8,7 @@ Form::Form() : _Name("DEFAULT"), _isSign(false), _goSign(1), _Exec(1){
 	if (CALL){std::cout << "-- Form DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
-Form::Form(std::string const Name, int const goSign, int const Exec) : _Name(Name), _isSign(false), _goSign(goSign), _Exec(Exec){
+Form::Form(std::string const Name, int const goSign, int const Exec) : _Name(Name), _isSign(false), _goSign(goSign), _Exec(Exec)	{
 	try {
 		if (goSign < 1 )	{
 			throw Form::GradeTooHighException();}
@@ -21,18 +21,20 @@ Form::Form(std::string const Name, int const goSign, int const Exec) : _Name(Nam
 			throw Form::GradeTooLowException();}
 	}
 
-	catch (const Form::GradeTooHighException& e){
+	catch (const Form::GradeTooHighException& e)	{
 		std::cout << e.what() << std::endl;
 	}
-	catch (const Form::GradeTooLowException& e){
+	catch (const Form::GradeTooLowException& e)	{
 		std::cout << e.what() << std::endl;
 	}
 
-	if (CALL){std::cout << "-- Form MAIN CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Form MAIN CONSTRUCTOR" << std::endl;}
 }
 
-Form::Form( const Form & src ) : _Name(src._Name), _isSign(src._isSign), _goSign(src._goSign), _Exec(src._Exec){
-	if (CALL){std::cout << "-- Form COPY CONSTRUCTOR" << std::endl;}
+Form::Form( const Form & src ) : _Name(src._Name), _isSign(src._isSign), _goSign(src._goSign), _Exec(src._Exec)	{
+	if (CALL)	{
+		std::cout << "-- Form COPY CONSTRUCTOR" << std::endl;}
 }
 
 /*
@@ -40,7 +42,8 @@ Form::Form( const Form & src ) : _Name(src._Name), _isSign(src._isSign), _goSign
 */
 
 Form::~Form(){
-	if (CALL){std::cout << "-- Form DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Form DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 /*
@@ -69,12 +72,15 @@ std::ostream &			operator<<( std::ostream & o, Form const & i )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-	int	Form::beSigned(const Bureaucrat& src){
+	int	Form::beSigned(const Bureaucrat& src)	{
 		try{
-			if (src.getGrade() > this->getgoSign()) {throw Form::GradeTooLowException();}
-			else	{this->_isSign = true; return (0);}
+			if (src.getGrade() > this->getgoSign())	{
+				throw Form::GradeTooLowException();}
+			else	{
+				this->_isSign = true;
+				return (0);}
 		}
-		catch(const std::exception& e){
+		catch(const std::exception& e)	{
 			std::cout << e.what() << std::endl;
 		}
 		return (1);

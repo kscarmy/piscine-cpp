@@ -6,7 +6,8 @@
 */
 
 AForm::AForm() : _Name("DEFAULT"), _isSign(false), _goSign(1), _Exec(1), _Target("Idefix"){
-	if (CALL){std::cout << "-- Form DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Form DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 AForm::AForm(std::string Name, int goSign, int Exec, std::string Target) : _Name(Name), _isSign(false), _goSign(goSign), _Exec(Exec), _Target(Target){
@@ -29,11 +30,13 @@ AForm::AForm(std::string Name, int goSign, int Exec, std::string Target) : _Name
 		std::cout << e.what() << std::endl;
 	}
 
-	if (CALL){std::cout << "-- Form MAIN CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Form MAIN CONSTRUCTOR" << std::endl;}
 }
 
 AForm::AForm( const AForm & src ) : _Name(src._Name), _isSign(src._isSign), _goSign(src._goSign), _Exec(src._Exec), _Target(src._Target){
-	if (CALL){std::cout << "-- AForm COPY CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- AForm COPY CONSTRUCTOR" << std::endl;}
 }
 
 /*
@@ -41,7 +44,8 @@ AForm::AForm( const AForm & src ) : _Name(src._Name), _isSign(src._isSign), _goS
 */
 
 AForm::~AForm(){
-	if (CALL){std::cout << "-- Form DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Form DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 /*
@@ -73,8 +77,12 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 
 	int	AForm::beSigned(const Bureaucrat& src){
 		try{
-			if (src.getGrade() > this->getgoSign()) {throw AForm::GradeTooLowException();}
-			else	{this->_isSign = true; std::cout << src.getName() << " has signed " << this->getName() << std::endl; return (0);}
+			if (src.getGrade() > this->getgoSign())	{
+				throw AForm::GradeTooLowException();}
+			else	{
+				this->_isSign = true;
+				std::cout << src.getName() << " has signed " << this->getName() << std::endl;
+				return (0);}
 		}
 		catch(const std::exception& e){
 			std::cout << e.what() << std::endl;
@@ -85,9 +93,12 @@ std::ostream &			operator<<( std::ostream & o, AForm const & i )
 	void	AForm::execute(Bureaucrat const & executor)	const{
 	try{
 		// std::cout << this->getExec() << " exec " << executor.getGrade() << " grade" << std::endl;
-		if (this->getisSign() != true) { throw AForm::FormNotSigned(); }
-		else	if (this->getExec() < executor.getGrade()) {  throw AForm::GradeTooLowException(); }
-		else	{this->andAction();}
+		if (this->getisSign() != true)	{
+			throw AForm::FormNotSigned(); }
+		else	if (this->getExec() < executor.getGrade())	{
+			throw AForm::GradeTooLowException(); }
+		else	{
+			this->andAction();}
 	}
 
 	catch (const AForm::GradeTooHighException& e){

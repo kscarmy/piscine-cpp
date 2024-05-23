@@ -5,7 +5,8 @@
 */
 
 Bureaucrat::Bureaucrat() : _Name("DEFAULT"), _Grade(150){
-	if (CALL){std::cout << "-- Bureaucrat DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Bureaucrat DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 Bureaucrat::Bureaucrat(std::string	Name, int Grade) : _Name(Name){
@@ -23,10 +24,11 @@ Bureaucrat::Bureaucrat(std::string	Name, int Grade) : _Name(Name){
 	catch (const Bureaucrat::GradeTooLowException& e){
 		std::cout << e.what() << std::endl;
 	}
-	if (CALL){std::cout << "-- Bureaucrat MAIN CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Bureaucrat MAIN CONSTRUCTOR" << std::endl;}
 }
 
-Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _Name(src._Name), _Grade(src._Grade){
+Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _Name(src._Name), _Grade(src._Grade)	{
 	if (CALL)	{
 		std::cout << "-- Bureaucrat COPY CONSTRUCTOR" << std::endl;}
 }
@@ -58,7 +60,7 @@ Bureaucrat &				Bureaucrat::operator=( Bureaucrat const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 {
-	o <<  i.getName() << " bureaucrat has " << i.getGrade() << " grade";
+	o <<  i.getName() << ", bureaucrat grade " << i.getGrade() << ".";
 	return o;
 }
 
@@ -71,26 +73,28 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 
 	void		Bureaucrat::increment(void){
 		try {
-			if (_Grade - 1 < 1) {throw Bureaucrat::GradeTooHighException();}
+			if (_Grade - 1 < 1)	{
+				throw Bureaucrat::GradeTooHighException();}
 			else	{_Grade -= 1;}
 		}
-		catch (const Bureaucrat::GradeTooHighException& e){
+		catch (const Bureaucrat::GradeTooHighException& e)	{
 			std::cout << e.what() << std::endl;
 		}
-		catch (const Bureaucrat::GradeTooLowException& e){
+		catch (const Bureaucrat::GradeTooLowException& e)	{
 			std::cout << e.what() << std::endl;
 		}
 	}
 
 	void		Bureaucrat::decrement(void){
 		try {
-			if (_Grade + 1 > 150) {throw Bureaucrat::GradeTooLowException();}
+			if (_Grade + 1 > 150)	{
+				throw Bureaucrat::GradeTooLowException();}
 			else	{_Grade += 1;}
 		}
-		catch (const Bureaucrat::GradeTooHighException& e){
+		catch (const Bureaucrat::GradeTooHighException& e)	{
 			std::cout << e.what() << std::endl;
 		}
-		catch (const Bureaucrat::GradeTooLowException& e){
+		catch (const Bureaucrat::GradeTooLowException& e)	{
 			std::cout << e.what() << std::endl;
 		}
 	}
@@ -99,11 +103,11 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-	std::string	Bureaucrat::getName(void)	const{
+	std::string	Bureaucrat::getName(void)	const	{
 		return (_Name);
 	}
 
-	int			Bureaucrat::getGrade(void)	const{
+	int			Bureaucrat::getGrade(void)	const	{
 		return (_Grade);
 	}
 
@@ -111,10 +115,10 @@ std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i )
 ** --------------------------------- EXCEPTION ---------------------------------
 */
 
-	const	char	*Bureaucrat::GradeTooHighException::what() const	throw(){
+	const	char	*Bureaucrat::GradeTooHighException::what() const	throw()	{
 		return ("Maximum grade is 1");
 	}
-	const	char	*Bureaucrat::GradeTooLowException::what() const	throw(){
+	const	char	*Bureaucrat::GradeTooLowException::what() const	throw()	{
 		return ("Minimum grade is 150");
 	}
 

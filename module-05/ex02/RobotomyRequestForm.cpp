@@ -5,15 +5,18 @@
 */
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45, "Idefix"){
-	if (CALL){std::cout << "-- RobotomyRequestForm DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- RobotomyRequestForm DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const	std::string	Target) : AForm("RobotomyRequestForm", 72, 45, Target){
-	if (CALL){std::cout << "-- RobotomyRequestForm MAIN CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- RobotomyRequestForm MAIN CONSTRUCTOR" << std::endl;}
 }
 
 RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : AForm(src){
-	if (CALL){std::cout << "-- RobotomyRequestForm COPY CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- RobotomyRequestForm COPY CONSTRUCTOR" << std::endl;}
 }
 
 /*
@@ -21,7 +24,8 @@ RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm & src ) : AF
 */
 
 RobotomyRequestForm::~RobotomyRequestForm(){
-	if (CALL){std::cout << "-- RobotomyRequestForm DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- RobotomyRequestForm DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 /*

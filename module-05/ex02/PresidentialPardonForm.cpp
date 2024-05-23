@@ -5,15 +5,18 @@
 */
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5, "Idefix"){
-	if (CALL){std::cout << "-- PresidentialPardonForm DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- PresidentialPardonForm DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const	std::string	Target) : AForm("PresidentialPardonForm", 25, 5, Target){
-	if (CALL){std::cout << "-- PresidentialPardonForm MAIN CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- PresidentialPardonForm MAIN CONSTRUCTOR" << std::endl;}
 }
 
 PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & src ) : AForm(src){
-	if (CALL){std::cout << "-- PresidentialPardonForm COPY CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- PresidentialPardonForm COPY CONSTRUCTOR" << std::endl;}
 }
 
 /*
@@ -21,7 +24,8 @@ PresidentialPardonForm::PresidentialPardonForm( const PresidentialPardonForm & s
 */
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-	if (CALL){std::cout << "-- PresidentialPardonForm DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- PresidentialPardonForm DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 /*

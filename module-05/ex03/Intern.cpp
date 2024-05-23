@@ -5,15 +5,18 @@
 */
 
 Intern::Intern() : _NameForm("DEFAULT"), _TargetForm("DEFAULT"){
-	if (CALL){std::cout << "-- Intern DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Intern DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 Intern::Intern(std::string NameForm, std::string TargetForm) : _NameForm(NameForm), _TargetForm(TargetForm){
-	if (CALL){std::cout << "-- Intern DEFAULT CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Intern DEFAULT CONSTRUCTOR" << std::endl;}
 }
 
 Intern::Intern( const Intern & src ) : _NameForm(src.getNameForm()), _TargetForm(src.getTargetForm()){
-	if (CALL){std::cout << "-- Intern COPY CONSTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Intern COPY CONSTRUCTOR" << std::endl;}
 }
 
 /*
@@ -21,7 +24,8 @@ Intern::Intern( const Intern & src ) : _NameForm(src.getNameForm()), _TargetForm
 */
 
 Intern::~Intern(){
-	if (CALL){std::cout << "-- Intern DEFAULT DESTRUCTOR" << std::endl;}
+	if (CALL)	{
+		std::cout << "-- Intern DEFAULT DESTRUCTOR" << std::endl;}
 }
 
 
