@@ -1,6 +1,7 @@
 NAME =   convert
 
 SRCS = main.cpp \
+		ScalarConverter.cpp \
 		isSomeThing.cpp \
 		char.cpp \
 		int.cpp \
