@@ -39,5 +39,5 @@ int main( void ) {
 		std::cout << str[i] << std::endl;
 	}
 
-return 0;
+	return 0;
 }
