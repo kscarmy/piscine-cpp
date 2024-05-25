@@ -1,6 +1,8 @@
 NAME =   serialisation
 
 SRCS = main.cpp \
+		Serializer.cpp
+
 
 OBJSRCS = $(SRCS:.cpp=.o)
 
