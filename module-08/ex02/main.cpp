@@ -19,10 +19,9 @@ int main(void)
     MutantStack<int>::iterator ite = mstack.end();
     ++it;
     --it;
-    while (it != ite)
-    {
-    std::cout << *it << std::endl;
-    ++it;
+    while (it != ite)	{
+		std::cout << *it << std::endl;
+		++it;
     }
     std::stack<int> s(mstack);
 
@@ -43,10 +42,9 @@ int main(void)
     std::list<int>::iterator itelist = mlist.end();
     ++itlist;
     --itlist;
-    while (itlist != itelist)
-    {
-    std::cout << *itlist << std::endl;
-    ++itlist;
+    while (itlist != itelist)	{
+		std::cout << *itlist << std::endl;
+		++itlist;
     }
     std::list<int> slist(mlist);
 
