@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2022/10/09 17:27:17 by guderram         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:50:50 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Intern.hpp"
 
-#define LECTURE 0
+#define LECTURE 1
 
 int main( void )
 {

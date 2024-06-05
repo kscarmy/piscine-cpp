@@ -6,7 +6,7 @@
 /*   By: guderram <guderram@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:13:24 by guderram          #+#    #+#             */
-/*   Updated: 2023/03/23 07:37:39 by guderram         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:41:10 by guderram         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,14 @@ int main( void )
 
 	std::cout << std::endl << "-------------------" << std::endl << std::endl;
 	
-	vraipier.beSigned(jean);
-	jean.signForm(vraipier);
+	Form papier2("papier2", 10, 20);
+	Form vraipier2(papier2);
+
+	vraipier2.beSigned(jean);
+	jean.signForm(vraipier2);
 	
-	std::cout << papier << std::endl;
-	std::cout << vraipier << std::endl;
+	std::cout << papier2 << std::endl;
+	std::cout << vraipier2 << std::endl;
 
 	/***************************************/
 
