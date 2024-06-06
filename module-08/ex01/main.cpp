@@ -10,8 +10,8 @@ int main(void)
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(11);
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    std::cout << "longest : " << sp.longestSpan() << std::endl;
+    std::cout << "shortest : " << sp.shortestSpan() << std::endl;
 
     std::cout << "-----------------------" << std::endl;
     
@@ -26,9 +26,14 @@ int main(void)
     std::cout << "-----------------------" << std::endl;
 
     Span jeannot(10000);
-    for (int i=0; i<10000; i++){
-        jeannot.addNumber(i * 3 + 3);
-    }
+	std::vector<int> tmp(10000);
+
+	for (std::vector<int>::iterator i = tmp.begin(); i != tmp.end(); i++)	{
+		*i = rand() % 10000;
+	}
+
+	jeannot.addNumbers(tmp.begin(), tmp.end());
+
     std::cout << "longest : " << jeannot.longestSpan() << std::endl;
     std::cout << "shortest : " << jeannot.shortestSpan() << std::endl;
 

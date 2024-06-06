@@ -28,6 +28,13 @@ class MutantStack : public std::stack<T>
 			return (this->c.end());
 		}
 
+		const_iterator	begin(void) const{
+			return (this->c.begin());
+		}
+		const_iterator	end(void) const{
+			return (this->c.end());
+		}
+
 	private:
 
 };

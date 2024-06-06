@@ -7,8 +7,10 @@ int main(void)
 
     for (int i=0; i<5; i++){
         vect.push_back(i*i+1);
-        std::cout << vect[i] << " ";}
+        std::cout << vect[i] << " ";
+	}
     std::cout << std::endl;
+
     EasyFind(vect, 0);
     EasyFind(vect, 1);
     EasyFind(vect, 2);
@@ -24,9 +26,11 @@ int main(void)
 
     for (int i=0; i<5; i++){
         list.push_back(i*i+1);
-        std::cout << list.back() << " ";}
+        std::cout << list.back() << " ";
+	}
     std::cout << std::endl;
-        EasyFind(vect, 0);
+	
+	EasyFind(vect, 0);
     EasyFind(vect, 1);
     EasyFind(vect, 2);
     EasyFind(vect, 4);
