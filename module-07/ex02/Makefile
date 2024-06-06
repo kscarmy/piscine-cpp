@@ -1,7 +1,7 @@
 NAME =   Array
 
-# SRCS = main.cpp
-SRCS = sujet.cpp
+SRCS = main.cpp
+# SRCS = sujet.cpp
 
 OBJSRCS = $(SRCS:.cpp=.o)
 

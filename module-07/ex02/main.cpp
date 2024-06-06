@@ -69,7 +69,10 @@ int main(void)
 		jeannot[i] = str[i];
 	}
 
-
+	for (int i=0; i<4; i++){
+		std::cout << "jean[" << i << "] = " << jean[i] << std::endl;
+		std::cout << "jeannot[" << i << "] = " << jeannot[i] << std::endl;
+	}
 
 	Array<std::string> ah = jean;
 	Array<std::string> bh(ah);

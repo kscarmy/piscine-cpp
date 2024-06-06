@@ -53,14 +53,7 @@ Array<T>::Array(unsigned int n) : _size(n){
 
 template <typename T>
 Array<T>::Array( const Array & src ){
-	this->_size = src.size();
-	if (this->_size == 0) { this->_tab = NULL;}
-	else {
-		this->_tab = new T[_size];
-		for (unsigned int i=0; i<this->_size; i++){
-			this->_tab[i] = src._tab[i];
-		}
-	}
+	*this = src;
 }
 
 
@@ -80,9 +73,15 @@ Array<T>::~Array()
 template <typename T>
 Array<T> &				Array<T>::operator=( Array<T> const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->_value = rhs.getValue();
+	this->_size = rhs.size();
+	if (this->_size == 0)	{
+		this->_tab = NULL;
+	}
+	else {
+		this->_tab = new T[_size];
+		for (unsigned int i=0; i<this->_size; i++)	{
+			this->_tab[i] = rhs._tab[i];
+		}
 	}
 	return *this;
 }
