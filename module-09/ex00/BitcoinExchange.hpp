@@ -8,7 +8,6 @@
 # include <cstdlib>
 # include <sstream>
 
-
 class BitcoinExchange
 {
 

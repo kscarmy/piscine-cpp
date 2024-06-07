@@ -64,20 +64,30 @@ int	BitcoinExchange::ParseData(void)
 		std::size_t pos = ligne.find(",");
 		std::string date = ligne.substr(0, pos);
 		std::string prixString = ligne.substr(pos + 1);
+		// std::cout << "prixString : " << prixString << std::endl;
+		if (prixString == "exchange_rate")
+			continue;
 		char *tmp;
 		double prix = std::strtod(prixString.c_str(), &tmp);
-		if (*tmp != '\0') {
-			// Conversion failed, invalid input
-			throw std::invalid_argument("Invalid input string for conversion to double.");
+		try {
+			if (*tmp != '\0') {
+				// Conversion failed, invalid input
+				throw std::invalid_argument("Invalid input string for conversion to double.");
+			}
+		}
+		catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
+			return -1;
 		}
 		this->_data.insert(std::pair<std::string, double>(date, prix));
     }
 
+	// std::cout << "Data loaded ?" << std::endl;
 
-	// Print the map
-	for (std::map<std::string, double>::iterator it = this->_data.begin(); it != this->_data.end(); ++it)	{
-		std::cout << it->first << " - " << it->second << std::endl;
-	}
+	// // Print the map
+	// for (std::map<std::string, double>::iterator it = this->_data.begin(); it != this->_data.end(); ++it)	{
+	// 	std::cout << it->first << " - " << it->second << std::endl;
+	// }
 	dataFile.close();
 	return 0;
 }
@@ -99,19 +109,33 @@ bool BitcoinExchange::isValidNumber(std::string str) {
 }
 
 double BitcoinExchange::findOrPrevDate(const std::map<std::string, double>& data, const std::string& date) {
-    std::map<std::string, double>::const_iterator it = data.lower_bound(date);
+    // std::map<std::string, double>::const_iterator it = data.lower_bound(date);
 
-    if (it == data.end() || it->first != date) {
-        if (it == data.begin()) {
-            // Si on est au début et que la date n'est pas trouvée, il n'y a pas de date précédente
-            throw std::out_of_range("No date found or previous date available.");
-        } else {
-            // La date n'est pas trouvée, prendre la date précédente
-            --it;
-        }
-    }
+	int i = 0;
+    // if (it == data.end() || it->first != date) {
+    //     if (it == data.begin()) {
+    //         // Si on est au début et que la date n'est pas trouvée, il n'y a pas de date précédente
+    //         throw std::out_of_range("No date found or previous date available.");
+    //     } else {
+    //         // La date n'est pas trouvée, prendre la date précédente
+    //         --it;
+    //     }
+	// 	i++;
+    // }
+	for (std::map<std::string, double>::const_iterator it = data.begin(); it != data.end(); ++it)	{
+		// std::cout << it->first << " - " << it->second << std::endl;
+		// std::cout << "tests :" << it->first << std::endl;
+		if (it->first == date) {
+			// std::cout << "i = " << i << std::endl;
 
-    return it->second;
+			return it->second;
+			// break;
+		}
+		i++;
+	}
+	// std::cout << "i = " << i << std::endl;
+	std::cout << "No date found or previous date available." << std::endl;
+    return 0;
 }
 
 
@@ -166,7 +190,7 @@ int BitcoinExchange::ParseInput(std::string input)
 		std::cerr << e.what() << std::endl;
 		return -1;
 	}
-	std::string prixVolume = input.substr(pos + 1);
+	std::string prixVolume = input.substr(pos + 3);
 	try {
 		if (!isValidNumber(prixVolume)) {
 			throw std::invalid_argument("Invalid volume value" + prixVolume);
@@ -189,9 +213,17 @@ int BitcoinExchange::ParseInput(std::string input)
 		return -1;
 	}
 	try {
-        double value = findOrPrevDate(this->_data, date);
-		std::cout << date << " => " << volume << " = ";
-        std::cout << value * volume << std::endl;
+		if (volume < 0) {
+			throw std::out_of_range("Error: negative number.");
+		}
+		else if (volume > 1000) {
+			throw std::out_of_range("Error: too large a number.");
+		}
+		else {
+			double value = findOrPrevDate(this->_data, date);
+			std::cout << date << " => " << volume << " = ";
+			std::cout << value * volume << std::endl;
+		}
     } catch (const std::out_of_range& e) {
         std::cerr << e.what() << std::endl;
     }

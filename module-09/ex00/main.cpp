@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	}
 
 	BitcoinExchange exchange;
+	exchange.ParseData();
 
     std::string ligne;
 	while (std::getline(input, ligne)) {
