@@ -84,9 +84,10 @@ int	BitcoinExchange::ParseData(void)
 
 	// std::cout << "Data loaded ?" << std::endl;
 
-	// // Print the map
+	// Print the map
 	// for (std::map<std::string, double>::iterator it = this->_data.begin(); it != this->_data.end(); ++it)	{
-	// 	std::cout << it->first << " - " << it->second << std::endl;
+	// 	if (it->first == "2010-08-20")
+	// 		std::cout << it->first << " - " << it->second << std::endl;
 	// }
 	dataFile.close();
 	return 0;
@@ -109,33 +110,63 @@ bool BitcoinExchange::isValidNumber(std::string str) {
 }
 
 double BitcoinExchange::findOrPrevDate(const std::map<std::string, double>& data, const std::string& date) {
-    // std::map<std::string, double>::const_iterator it = data.lower_bound(date);
-
 	int i = 0;
-    // if (it == data.end() || it->first != date) {
-    //     if (it == data.begin()) {
-    //         // Si on est au début et que la date n'est pas trouvée, il n'y a pas de date précédente
-    //         throw std::out_of_range("No date found or previous date available.");
-    //     } else {
-    //         // La date n'est pas trouvée, prendre la date précédente
-    //         --it;
-    //     }
-	// 	i++;
-    // }
 	for (std::map<std::string, double>::const_iterator it = data.begin(); it != data.end(); ++it)	{
-		// std::cout << it->first << " - " << it->second << std::endl;
-		// std::cout << "tests :" << it->first << std::endl;
 		if (it->first == date) {
-			// std::cout << "i = " << i << std::endl;
-
 			return it->second;
-			// break;
 		}
 		i++;
 	}
-	// std::cout << "i = " << i << std::endl;
 	std::cout << "No date found or previous date available." << std::endl;
-    return 0;
+
+	int year, month, day;
+	char dash1, dash2;
+	std::istringstream date_stream(date);
+	date_stream >> year >> dash1 >> month >> dash2 >> day;
+
+	// std::string year = date.substr(0, 4);
+	// std::string month = date.substr(5, 2);
+	// std::string day = date.substr(8, 2);
+
+	std::map<std::string, double>::iterator it = _data.begin();
+
+	int dYear = std::atoi(it->first.substr(0, 4).c_str());
+	while (it != _data.end() && dYear <= year) {
+		int dYear = std::atoi(it->first.substr(0, 4).c_str());
+		if (dYear <= year)
+			break;
+		it++;
+	}
+
+	int dMonth = std::atoi(it->first.substr(5, 2).c_str());
+	while (it != _data.end() && dMonth <= month) {
+		int dMonth = std::atoi(it->first.substr(5, 2).c_str());
+		if (dMonth <= month)
+			break;
+		it++;
+	}
+
+	int dDay = std::atoi(it->first.substr(8, 2).c_str());
+	// std::cout << "dDay : " << dDay << std::endl;
+	// std::cout << "day : " << day << std::endl;
+	while (it != _data.end() && dDay <= day) {
+		int dDay = std::atoi(it->first.substr(8, 2).c_str());
+		if (dDay <= day)
+			break;
+		it++;
+	}
+
+	if (it->first != date)	{
+		it--;
+		std::cout << "Previous date : " << it->first << " price : " << it->second << std::endl;
+	}
+	else {
+		std::cout << "Date found : " << it->first << " price : " << it->second << std::endl;
+	}
+	
+
+	return it->second;
+
 }
 
 
