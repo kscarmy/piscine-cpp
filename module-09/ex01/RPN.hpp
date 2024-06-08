@@ -3,27 +3,24 @@
 
 # include <iostream>
 # include <string>
-# include <stack>
-
+# include <list>
 
 class RPN
 {
-
 	public:
-
 		RPN();
 		RPN(std::string input);
 		~RPN();
 
-		RPN &		operator=( RPN const & rhs );
+		RPN & operator=(RPN const & rhs);
 
 		void getStack() const;
 		void calculate();
 
 	private:
-		std::vector<std::string> _stack;
+		std::list<std::string> _stack;
 };
 
-std::ostream &			operator<<( std::ostream & o, RPN const & i );
+std::ostream & operator<<(std::ostream & o, RPN const & i);
 
 #endif /* ************************************************************* RPN_H */
