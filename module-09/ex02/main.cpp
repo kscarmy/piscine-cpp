@@ -1,6 +1,7 @@
 #include "PmergeMe.hpp"
 #include <vector>
 #include <cstdlib> // pour std::atoi
+#define DEBUG 0
 
 int main(int argc, char **argv)
 {
@@ -10,28 +11,19 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    std::vector<int> numbers;
+    PmergeMe fj;
     for (int i = 1; i < argc; i++)
     {
-        numbers.push_back(std::atoi(argv[i]));
+		fj.pushBackVector(std::atoi(argv[i]));
     }
 
-    std::cout << "Before: ";
-    for (size_t i = 0; i < numbers.size(); i++)
-    {
-        std::cout << numbers[i] << " ";
-    }
-    std::cout << std::endl;
+    if (DEBUG) std::cout << "Before: ";
+    fj.displayVector();
 
-    PmergeMe sorter;
-    sorter.sort(numbers);
+    fj.sortVector();
 
-    std::cout << "After: ";
-    for (size_t i = 0; i < numbers.size(); i++)
-    {
-        std::cout << numbers[i] << " ";
-    }
-    std::cout << std::endl;
+    if (DEBUG) std::cout << "After: ";
+	fj.displayVector();
 
     return 0;
 }

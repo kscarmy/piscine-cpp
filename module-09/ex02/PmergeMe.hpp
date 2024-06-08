@@ -11,10 +11,17 @@ class PmergeMe
         ~PmergeMe();
 
 
-        void sort(std::vector<int>& vec);
+        void sortVector();
+        void sortVectorN(std::size_t from, std::size_t to);
+
+
+		void pushBackVector(int n);
+		std::size_t size() const;
+
+		void displayVector() const;
 
     private:
-        void fordJohnsonSort(std::vector<int>& vec, int left, int right);
+		std::vector<int> _data;
 };
 
 
