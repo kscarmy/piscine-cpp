@@ -47,7 +47,7 @@ void PmergeMe::displayVector() const
 }
 
 
-void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t n)
+void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size_t nS)
 {
 	std::size_t	fSize = 0;
 	std::size_t	sSize = 0;
@@ -57,32 +57,20 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t n)
 	if (DEBUG_SORT) std::cout << "first : " << first[0] << " " << first[1] << std::endl;
 	if (DEBUG_SORT) std::cout << "second : " << second[0] << " " << second[1] << std::endl;
 
-	while (i < n * 2)
+	while (i < nF + nS)
 	{
-		// if (fSize + sSize  + 1 == n * 2)	{
-		// 	if (fSize == n)	{
-		// 		tmp.push_back(second[sSize]);
-		// 		sSize++;
-		// 	}
-		// 	else if (sSize == n)	{
-		// 		tmp.push_back(first[fSize]);
-		// 		fSize++;
-		// 	}
-		// 	break;
-		// }
-
-		if (fSize == n)
+		if (fSize == nF)
 		{
-			while (sSize < n)
+			while (sSize < nS)
 			{
 				tmp.push_back(second[sSize]);
 				sSize++;
 			}
 			break;
 		}
-		if (sSize == n)
+		if (sSize == nS)
 		{
-			while (fSize < n)
+			while (fSize < nF)
 			{
 				tmp.push_back(first[fSize]);
 				fSize++;
@@ -104,21 +92,23 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t n)
 		}
 		i++;
 	}
-	if (DEBUG_SORT) std::cout << "TMP : debut :" << std::endl;
-	for (size_t i = 0; i < tmp.size(); i++)
-	{
-		if (DEBUG_SORT) std::cout << tmp[i] << " ";
+	if (DEBUG_SORT) {
+		std::cout << "TMP : debut :" << std::endl;
+		for (size_t i = 0; i < tmp.size(); i++){
+			if (DEBUG_SORT) std::cout << tmp[i] << " ";
+		}
+		std::cout << std::endl;
+		std::cout << "TMP : fin :" << std::endl;
 	}
-	if (DEBUG_SORT) std::cout << std::endl;
-	if (DEBUG_SORT) std::cout << "TMP : fin :" << std::endl;
+
 
 	/*	copie tmp dans le vector	*/
 	for (size_t i = 0; i < tmp.size(); i++)
 	{
-		if (i < n)
+		if (i < nF)
 			first[i] = tmp[i];
 		else
-			second[i - n] = tmp[i];
+			second[i - nS] = tmp[i];
 	}
 
 }
@@ -139,15 +129,15 @@ void PmergeMe::sortVector()
 
 	// if (DEBUG_SORT) displayVector();
 	// if (DEBUG_SORT) std::cout << "1/2 half sorted :" << std::endl;
-	sortVectorNbis(&this->_data[0], &this->_data[2], 2);
+	sortVectorNbis(&this->_data[0], &this->_data[2], 2, 2);
 	
 	if (DEBUG_SORT) displayVector();
 	if (DEBUG_SORT) std::cout << "2/2 half sorted :" << std::endl;
-	sortVectorNbis(&this->_data[4], &this->_data[6], 2);
+	sortVectorNbis(&this->_data[4], &this->_data[6], 2, 2);
 
 	if (DEBUG_SORT) displayVector();
 	if (DEBUG_SORT) std::cout << "all half sorted :" << std::endl;
-	sortVectorNbis(&this->_data[0], &this->_data[4], 4);
+	sortVectorNbis(&this->_data[0], &this->_data[4], 4, 4);
 
 }
 

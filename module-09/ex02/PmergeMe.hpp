@@ -18,7 +18,7 @@ class PmergeMe
 
         // void sortVectorNbis(int *first, int *second, std::size_t n);
 
-		void sortVectorNbis(int *first, int *second, std::size_t n);
+		void sortVectorNbis(int *first, int *second, std::size_t nF, std::size_t nS);
 
 
 		void pushBackVector(int n);
