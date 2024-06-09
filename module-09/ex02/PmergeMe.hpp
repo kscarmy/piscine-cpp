@@ -4,6 +4,8 @@
 # include <iostream>
 # include <vector>
 
+# define DEBUG_SORT 0
+
 class PmergeMe
 {
     public:
@@ -12,12 +14,11 @@ class PmergeMe
 
 
         void sortVector();
-        void sortVectorN(std::size_t from, std::size_t to);
+        // void sortVectorN(std::size_t from, std::size_t to);
 
-        void sortVectorNbis(int *first, int *second, std::size_t n);
+        // void sortVectorNbis(int *first, int *second, std::size_t n);
 
-
-
+		void sortVectorNbis(int *first, int *second, std::size_t n);
 
 
 		void pushBackVector(int n);

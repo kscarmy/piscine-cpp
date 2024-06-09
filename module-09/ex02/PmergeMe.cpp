@@ -46,51 +46,81 @@ void PmergeMe::displayVector() const
 	std::cout << std::endl;
 }
 
-void PmergeMe::sortVectorN(std::size_t from, std::size_t to)
-{
-
-	to ++;
-
-	if (this->_data[from] > this->_data[from + 2])
-	{
-		std::swap(this->_data[from], this->_data[from + 2]);
-		if (this->_data[from + 1] > this->_data[from + 2])
-		{
-			std::swap(this->_data[from + 1], this->_data[from + 2]);
-		}
-	}
-	else
-	{
-		if (this->_data[from + 1] > this->_data[from + 2])
-		{
-			std::swap(this->_data[from + 1], this->_data[from + 2]);
-		}
-	}
-}
 
 void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t n)
 {
 	std::size_t	fSize = 0;
 	std::size_t	sSize = 0;
-	while (fSize <= n && sSize <= n)
+	std::size_t i = 0;
+	std::vector<int> tmp;
+
+	if (DEBUG_SORT) std::cout << "first : " << first[0] << " " << first[1] << std::endl;
+	if (DEBUG_SORT) std::cout << "second : " << second[0] << " " << second[1] << std::endl;
+
+	while (i < n * 2)
 	{
-		std::cout << "First: " << first[fSize] << " Second: " << second[sSize] << std::endl;
-		if (fSize + sSize  + 1 == n * 2)
+		// if (fSize + sSize  + 1 == n * 2)	{
+		// 	if (fSize == n)	{
+		// 		tmp.push_back(second[sSize]);
+		// 		sSize++;
+		// 	}
+		// 	else if (sSize == n)	{
+		// 		tmp.push_back(first[fSize]);
+		// 		fSize++;
+		// 	}
+		// 	break;
+		// }
+
+		if (fSize == n)
+		{
+			while (sSize < n)
+			{
+				tmp.push_back(second[sSize]);
+				sSize++;
+			}
 			break;
+		}
+		if (sSize == n)
+		{
+			while (fSize < n)
+			{
+				tmp.push_back(first[fSize]);
+				fSize++;
+			}
+			break;
+		}
+
 		if (first[fSize] < second[sSize])
 		{
-			std::cout << "First: " << first[fSize] << " Second: " << second[sSize] << "---" << std::endl;
+			tmp.push_back(first[fSize]);
 			fSize++;
 			continue;
 		}
-		else if (first[fSize] > second[sSize])
+		if (first[fSize] > second[sSize])
 		{
-			std::swap(first[fSize], second[sSize]);
-			std::cout << "First: " << first[fSize] << " Second: " << second[sSize] << "-------" << std::endl;
+			tmp.push_back(second[sSize]);
 			sSize++;
 			continue;
 		}
+		i++;
 	}
+	if (DEBUG_SORT) std::cout << "TMP : debut :" << std::endl;
+	for (size_t i = 0; i < tmp.size(); i++)
+	{
+		if (DEBUG_SORT) std::cout << tmp[i] << " ";
+	}
+	if (DEBUG_SORT) std::cout << std::endl;
+	if (DEBUG_SORT) std::cout << "TMP : fin :" << std::endl;
+
+	/*	copie tmp dans le vector	*/
+	for (size_t i = 0; i < tmp.size(); i++)
+	{
+		if (i < n)
+			first[i] = tmp[i];
+		else
+			second[i - n] = tmp[i];
+	}
+
 }
 
 
@@ -106,16 +136,18 @@ void PmergeMe::sortVector()
 		}
 	}
 
-	displayVector();
-	// sortVectorN(0, 3);
+
+	// if (DEBUG_SORT) displayVector();
+	// if (DEBUG_SORT) std::cout << "1/2 half sorted :" << std::endl;
 	sortVectorNbis(&this->_data[0], &this->_data[2], 2);
 	
-	displayVector();
-	// sortVectorN(4, 7);
+	if (DEBUG_SORT) displayVector();
+	if (DEBUG_SORT) std::cout << "2/2 half sorted :" << std::endl;
 	sortVectorNbis(&this->_data[4], &this->_data[6], 2);
 
-	displayVector();
-	
+	if (DEBUG_SORT) displayVector();
+	if (DEBUG_SORT) std::cout << "all half sorted :" << std::endl;
+	sortVectorNbis(&this->_data[0], &this->_data[4], 4);
 
 }
 
