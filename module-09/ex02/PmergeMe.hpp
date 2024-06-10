@@ -28,6 +28,8 @@ class PmergeMe
 		void displayVector() const;
 		std::string displayVectorString(int *arr, std::size_t n) const;
 
+		void tests();
+
     private:
 		std::vector<int> _data;
 };

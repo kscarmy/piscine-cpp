@@ -56,7 +56,6 @@ std::string	PmergeMe::displayVectorString(int *arr, std::size_t n) const
 		std::string str = ss.str();
 		out += str + " ";
 	}
-	// out += "\n";
 	return out;
 }
 
@@ -143,35 +142,27 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size
 	// if (DEBUG_SORT) std::cout << "second : " << displayVectorString(second, nS) << std::endl;
 }
 
+void PmergeMe::tests()	{
+	
+}
 
 void PmergeMe::sortVector()
 {
-	// sort one out of two elements (un sur deux)
-	// for (size_t i = 0; i < this->_data.size(); i+=2)
-	// {
-	// 	if (this->_data[i + 1] )	{
-	// 		if (this->_data[i] > this->_data[i + 1])	{
-	// 			std::swap(this->_data[i], this->_data[i + 1]);
-	// 		}
-	// 	}
-	// }
-
 
 	if (DEBUG_SORT) displayVector();
 	if (DEBUG_SORT) std::cout << "1/2 half sorted :" << std::endl;
-	sortVectorNbis(&this->_data[0], &this->_data[2], 2, 1);
-	// sortVectorNbis(&this->_data[0], &this->_data[2], 2, 2);
+	sortVectorNbis(&this->_data[0], &this->_data[2], 2, 1);			// 6
+	// sortVectorNbis(&this->_data[0], &this->_data[2], 2, 2);		// 8
 	
 	if (DEBUG_SORT) displayVector();
 	if (DEBUG_SORT) std::cout << "2/2 half sorted :" << std::endl;
-	sortVectorNbis(&this->_data[3], &this->_data[5], 2, 1);
-	// sortVectorNbis(&this->_data[4], &this->_data[6], 2, 2);
+	sortVectorNbis(&this->_data[3], &this->_data[5], 2, 1);			// 6
+	// sortVectorNbis(&this->_data[4], &this->_data[6], 2, 2);		// 8
 
 	if (DEBUG_SORT) displayVector();
 	if (DEBUG_SORT) std::cout << "all half sorted :" << std::endl;
-	sortVectorNbis(&this->_data[0], &this->_data[3], 3, 3);
-	// sortVectorNbis(&this->_data[0], &this->_data[4], 4, 4);
-
+	sortVectorNbis(&this->_data[0], &this->_data[3], 3, 3);			// 6
+	// sortVectorNbis(&this->_data[0], &this->_data[4], 4, 4);		// 8
 
 }
 
