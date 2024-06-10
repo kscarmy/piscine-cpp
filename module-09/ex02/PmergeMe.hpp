@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <vector>
+# include <sstream>
 
 # define DEBUG_SORT 0
 
@@ -25,6 +26,7 @@ class PmergeMe
 		std::size_t size() const;
 
 		void displayVector() const;
+		std::string displayVectorString(int *arr, std::size_t n) const;
 
     private:
 		std::vector<int> _data;
