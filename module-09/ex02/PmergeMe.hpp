@@ -11,7 +11,8 @@
 
 # define DEBUG_SORT 0
 # define DEBUG_PYRA 0
-# define TIME_ALL 1
+# define TIME_ALL 0
+# define VERIFY 0
 
 class PmergeMe
 {
@@ -48,8 +49,6 @@ class PmergeMe
     void createDequePyra();
     void verifyDequeResult();
     void sortDeque();
-
-
 
     private:
 /*
