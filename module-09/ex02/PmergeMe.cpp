@@ -8,6 +8,15 @@ PmergeMe::PmergeMe()	{
 }
 
 
+PmergeMe::PmergeMe( const PmergeMe & src )	{
+	this->_dataV = src._dataV;
+	this->_pyraV = src._pyraV;
+	this->_dataD = src._dataD;
+	this->_pyraD = src._pyraD;
+	*this = src;
+	return ;
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -19,7 +28,20 @@ PmergeMe::~PmergeMe()	{
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+PmergeMe &				PmergeMe::operator=( PmergeMe const & rhs )	{
+	if ( this != &rhs )	{
+		this->_dataV = rhs._dataV;
+		this->_pyraV = rhs._pyraV;
+		this->_dataD = rhs._dataD;
+		this->_pyraD = rhs._pyraD;
+	}
+	return *this;
+}
 
+std::ostream &			operator<<( std::ostream & o, PmergeMe const & i )	{
+	(void)i;
+	return o;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------

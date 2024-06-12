@@ -23,6 +23,12 @@ RPN::RPN(std::string input)	{
 	}
 }
 
+RPN::RPN( const RPN & src )
+{
+	_stack = src._stack;
+	*this = src;
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */

@@ -10,6 +10,7 @@ class RPN
 	public:
 		RPN();
 		RPN(std::string input);
+		RPN(RPN const & src);
 		~RPN();
 
 		RPN & operator=(RPN const & rhs);

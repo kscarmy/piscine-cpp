@@ -18,7 +18,10 @@ class PmergeMe
 {
     public:
         PmergeMe();
+		PmergeMe( PmergeMe const & src );
         ~PmergeMe();
+
+		PmergeMe &		operator=( PmergeMe const & rhs );
 
 /*
 ** --------------------------------- VECTOR ---------------------------------
@@ -64,5 +67,6 @@ class PmergeMe
 		std::deque<int> _pyraD;
 };
 
+std::ostream &			operator<<( std::ostream & o, PmergeMe const & i );
 
 #endif /* ******************************************************** PMERGEME_H */

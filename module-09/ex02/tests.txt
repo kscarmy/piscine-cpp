@@ -12,11 +12,20 @@ OK :
  ./PmergeMe `shuf -i 1-6 -n 6 | tr "\n" " "`
 
 
+ ./PmergeMe `shuf -i 1-193 -n 193 | tr "\n" " "`
+
+
+ ./PmergeMe `shuf -i 1-3000 -n 3000 | tr "\n" " "`
+
+
+ ./PmergeMe `shuf -i 1-10000 -n 10000 | tr "\n" " "`
+
+
+ ./PmergeMe `shuf -i 1-100000 -n 100000 | tr "\n" " "`
 
 
 
 KO :
- ./PmergeMe `shuf -i 1-193 -n 193 | tr "\n" " "`
 
 
 
