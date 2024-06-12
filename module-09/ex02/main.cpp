@@ -24,6 +24,7 @@ int main(int argc, char **argv)
 
     if (DEBUG) std::cout << "After: ";
 	fj.displayVector();
+	fj.verifyResult();
 
     return 0;
 }

@@ -5,8 +5,8 @@
 # include <vector>
 # include <sstream>
 
-# define DEBUG_SORT 1
-# define DEBUG_PYRA 1
+# define DEBUG_SORT 0
+# define DEBUG_PYRA 0
 
 class PmergeMe
 {
@@ -31,6 +31,8 @@ class PmergeMe
 
 		void createPyra();
 		bool checkPyra();
+
+		void verifyResult();
 
     private:
 		std::vector<int> _data;

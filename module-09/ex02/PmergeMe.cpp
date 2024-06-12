@@ -223,6 +223,15 @@ void PmergeMe::createPyra()	{
 	}
 }
 
+void PmergeMe::verifyResult()	{
+	for (size_t i = 1; i <= this->_data.size() - 1; i++)	{
+		if (this->_data[i - 1] != static_cast<int>(i)) {
+			std::cout << "Error at index : " << i << " value : " << this->_data[i] << std::endl;
+			return;
+		}
+	}
+	std::cout << "All good" << std::endl;
+}
 void PmergeMe::sortVector()
 {
 
@@ -237,9 +246,9 @@ void PmergeMe::sortVector()
 			continue;
 		}
 		else{
-			std::cout << "index : " << index << " pyra : " << _pyra[i] << std::endl;
-			std::cout << "index : " << index << " pyra +1 : " << _pyra[i + 1] << std::endl;
-			sortVectorNbis(&this->_data[index], &this->_data[index + _pyra[i + 1]], _pyra[i], _pyra[i + 1]);
+			if (DEBUG_SORT) std::cout << "index : " << index << " pyra : " << _pyra[i] << std::endl;
+			if (DEBUG_SORT) std::cout << "index : " << index << " pyra +1 : " << _pyra[i + 1] << std::endl;
+			sortVectorNbis(&this->_data[index], &this->_data[index + _pyra[i]], _pyra[i], _pyra[i + 1]);
 			index += _pyra[i] + _pyra[i + 1];
 			i++;
 		}
