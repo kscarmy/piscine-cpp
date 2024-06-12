@@ -6,6 +6,7 @@
 # include <sstream>
 
 # define DEBUG_SORT 0
+# define DEBUG_PYRA 0
 
 class PmergeMe
 {
@@ -23,15 +24,17 @@ class PmergeMe
 
 
 		void pushBackVector(int n);
-		std::size_t size() const;
+		std::size_t getDataSize() const;
 
 		void displayVector() const;
 		std::string displayVectorString(int *arr, std::size_t n) const;
 
 		void tests();
+		bool checkPyra();
 
     private:
 		std::vector<int> _data;
+		std::vector<int> _pyra;
 };
 
 
