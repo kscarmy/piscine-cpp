@@ -4,8 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-PmergeMe::PmergeMe()
-{
+PmergeMe::PmergeMe()	{
 }
 
 
@@ -13,8 +12,7 @@ PmergeMe::PmergeMe()
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-PmergeMe::~PmergeMe()
-{
+PmergeMe::~PmergeMe()	{
 }
 
 /*
@@ -27,30 +25,30 @@ PmergeMe::~PmergeMe()
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void PmergeMe::pushBackVector(int n)
-{
+
+/*
+** --------------------------------- VECTOR ---------------------------------
+*/
+
+
+void PmergeMe::pushBackVector(int n)	{
 	this->_data.push_back(n);
 }
 
-std::size_t PmergeMe::getDataSize() const
-{
+std::size_t PmergeMe::getVectorDataSize() const	{
 	return this->_data.size();
 }
 
-void PmergeMe::displayVector() const
-{
-	for (size_t i = 0; i < this->_data.size(); i++)
-	{
+void PmergeMe::displayVector() const	{
+	for (size_t i = 0; i < this->_data.size(); i++)	{
 		std::cout << this->_data[i] << " ";
 	}
 	std::cout << std::endl;
 }
 
-std::string	PmergeMe::displayVectorString(int *arr, std::size_t n) const
-{
+std::string	PmergeMe::displayVectorString(int *arr, std::size_t n) const	{
 	std::string out = "";
-	for (size_t i = 0; i < n; i++)
-	{
+	for (size_t i = 0; i < n; i++)	{
 		std::stringstream ss;
 		ss << arr[i];
 		std::string str = ss.str();
@@ -59,13 +57,11 @@ std::string	PmergeMe::displayVectorString(int *arr, std::size_t n) const
 	return out;
 }
 
-void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size_t nS)
-{
+void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size_t nS)	{
 	std::size_t	fSize = 0;
 	std::size_t	sSize = 0;
 	std::size_t i = 0;
 	std::vector<int> tmp;
-
 
 	if (DEBUG_SORT) std::cout << "nF : " << nF << std::endl;
 	if (DEBUG_SORT) std::cout << "nS : " << nS << std::endl;
@@ -95,42 +91,35 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size
 		}
 	}
 
-	while (i < nF + nS)
-	{
-		if (fSize == nF)
-		{
-			while (sSize < nS)
-			{
+	while (i < nF + nS)	{
+		if (fSize == nF)	{
+			while (sSize < nS)	{
 				tmp.push_back(second[sSize]);
 				sSize++;
 			}
 			break;
 		}
-		if (sSize == nS)
-		{
-			while (fSize < nF)
-			{
+		if (sSize == nS)	{
+			while (fSize < nF)	{
 				tmp.push_back(first[fSize]);
 				fSize++;
 			}
 			break;
 		}
 
-		if (first[fSize] < second[sSize])
-		{
+		if (first[fSize] < second[sSize])	{
 			tmp.push_back(first[fSize]);
 			fSize++;
 			continue;
 		}
-		if (first[fSize] > second[sSize])
-		{
+		if (first[fSize] > second[sSize])	{
 			tmp.push_back(second[sSize]);
 			sSize++;
 			continue;
 		}
 		i++;
 	}
-	if (DEBUG_SORT) {
+	if (DEBUG_SORT)	{
 		std::cout << "TMP : debut :" << std::endl;
 		for (size_t i = 0; i < tmp.size(); i++){
 			if (DEBUG_SORT) std::cout << tmp[i] << " ";
@@ -139,24 +128,18 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size
 		std::cout << "TMP : fin :" << std::endl;
 	}
 
-	// if (DEBUG_SORT) std::cout << "first : " << displayVectorString(first, nF) << std::endl;
-	// if (DEBUG_SORT) std::cout << "second : " << displayVectorString(second, nS) << std::endl;
-
 	/*	copie tmp dans le vector	*/
-	for (size_t i = 0; i < nF; i++)
-	{
+	for (size_t i = 0; i < nF; i++)	{
 		first[i] = tmp[i];
 	}
-	for (size_t i = 0; i < nS; i++)
-	{
+	for (size_t i = 0; i < nS; i++)	{
 		second[i] = tmp[i + nF];
 	}
 }
 
 // return true if pyra is < 2
-bool PmergeMe::checkPyra()	{
-	for (size_t i = 1; i < _pyra.size(); i++)
-	{
+bool PmergeMe::checkVectorPyra()	{
+	for (size_t i = 1; i < _pyra.size(); i++)	{
 		if (_pyra[i] <= 2 || _pyra[i] == 3)	{
 			return true;
 		}
@@ -166,8 +149,8 @@ bool PmergeMe::checkPyra()	{
 	return false;
 }
 
-void PmergeMe::createPyra()	{
-	std::size_t n = getDataSize();
+void PmergeMe::createVectorPyra()	{
+	std::size_t n = getVectorDataSize();
 	std::size_t res1 = 0;
 	std::size_t res2 = 0;
 	if (n % 2 == 0)	{
@@ -183,7 +166,7 @@ void PmergeMe::createPyra()	{
 	_pyra.insert(_pyra.begin(), res2);
 	_pyra.insert(_pyra.begin(), -1);	// -1 = Marker in pyra
 
-	while (!checkPyra())	{
+	while (!checkVectorPyra())	{
 		bool foundFirstMarker = false;
 		std::vector<int> tmp;
 		for (std::vector<int>::iterator it = _pyra.begin(); it != _pyra.end(); ++it) {
@@ -210,10 +193,9 @@ void PmergeMe::createPyra()	{
 		_pyra.insert(_pyra.begin(), -1);	// -1 = Marker in pyra
 	}
 
-	if (DEBUG_PYRA) {
+	if (DEBUG_PYRA)	{
 		std::cout << "pyra :";
-		for (size_t i = 0; i < _pyra.size(); i++)
-		{
+		for (size_t i = 0; i < _pyra.size(); i++)	{
 			if (_pyra[i] == -1)
 				std::cout << std::endl;
 			else
@@ -223,7 +205,7 @@ void PmergeMe::createPyra()	{
 	}
 }
 
-void PmergeMe::verifyResult()	{
+void PmergeMe::verifyVectorResult()	{
 	for (size_t i = 1; i <= this->_data.size() - 1; i++)	{
 		if (this->_data[i - 1] != static_cast<int>(i)) {
 			std::cout << "Error at index : " << i << " value : " << this->_data[i] << std::endl;
@@ -232,20 +214,15 @@ void PmergeMe::verifyResult()	{
 	}
 	std::cout << "All good" << std::endl;
 }
-void PmergeMe::sortVector()
-{
-
-	createPyra();
-
+void PmergeMe::sortVector()	{
 	std::size_t index = 0;
 
-	for (size_t i = 0; i < _pyra.size(); i++)
-	{
+	for (size_t i = 0; i < _pyra.size(); i++)	{
 		if (_pyra[i] == -1)	{
 			index = 0;
 			continue;
 		}
-		else{
+		else	{
 			if (DEBUG_SORT) std::cout << "index : " << index << " pyra : " << _pyra[i] << std::endl;
 			if (DEBUG_SORT) std::cout << "index : " << index << " pyra +1 : " << _pyra[i + 1] << std::endl;
 			sortVectorNbis(&this->_data[index], &this->_data[index + _pyra[i]], _pyra[i], _pyra[i + 1]);
@@ -253,8 +230,16 @@ void PmergeMe::sortVector()
 			i++;
 		}
 	}
-
 }
+
+
+/*
+** --------------------------------- VECTOR ---------------------------------
+*/
+
+
+
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
