@@ -136,28 +136,22 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size
 	{
 		second[i] = tmp[i + nF];
 	}
-
-
-	// if (DEBUG_SORT) std::cout << "first : " << displayVectorString(first, nF) << std::endl;
-	// if (DEBUG_SORT) std::cout << "second : " << displayVectorString(second, nS) << std::endl;
 }
 
 // return true if pyra is < 2
 bool PmergeMe::checkPyra()	{
 	for (size_t i = 1; i < _pyra.size(); i++)
 	{
-		if (_pyra[i] > 2)	{
-			return false;
-		}
-		if (_pyra[i] == -1)	{
+		if (_pyra[i] <= 2 || _pyra[i] == 3)	{
 			return true;
 		}
+		else
+			return false;
 	}
-	return true;
+	return false;
 }
 
-void PmergeMe::tests()	{
-	int x = 0;
+void PmergeMe::createPyra()	{
 	std::size_t n = getDataSize();
 	std::size_t res1 = 0;
 	std::size_t res2 = 0;
@@ -169,18 +163,12 @@ void PmergeMe::tests()	{
 		res1 = n / 2;
 		res2 = (n / 2) + 1;
 	}
-	
-	if (DEBUG_PYRA) std::cout << "res1 : " << res1 << std::endl;
-	if (DEBUG_PYRA) std::cout << "res2 : " << res2 << std::endl;
-
 	_pyra.insert(_pyra.begin(), -1);	// -1 = Marker in pyra
 	_pyra.insert(_pyra.begin(), res1);
 	_pyra.insert(_pyra.begin(), res2);
 	_pyra.insert(_pyra.begin(), -1);	// -1 = Marker in pyra
 
-	while (!checkPyra() && x < 2)	{
-		if (DEBUG_PYRA) std::cout << "res1 : " << res1 << std::endl;
-		
+	while (!checkPyra())	{
 		bool foundFirstMarker = false;
 		std::vector<int> tmp;
 		for (std::vector<int>::iterator it = _pyra.begin(); it != _pyra.end(); ++it) {
@@ -196,32 +184,23 @@ void PmergeMe::tests()	{
 					tmp.push_back(*it / 2);
 				}
 				else	{
-					tmp.push_back(*it / 2);
 					tmp.push_back(*it / 2 + 1);
+					tmp.push_back(*it / 2);
 				}
 			}
 		}
-		// for (size_t i = tmp.size() - 1; i >= 0; i--)	{
-		// 	_pyra.insert(_pyra.begin(), tmp[i]);
-		// }
 		for (std::vector<int>::reverse_iterator rit = tmp.rbegin(); rit != tmp.rend(); ++rit) {
 			_pyra.insert(_pyra.begin(), *rit);
 		}
-		if (DEBUG_PYRA) std::cout << "res1 : " << res1 << std::endl;
-		if (DEBUG_PYRA) std::cout << "res2 : " << res2 << std::endl;
-		// _pyra.insert(_pyra.begin(), res1);
-		// _pyra.insert(_pyra.begin(), res2);
-		// std::cout << "pyra :" << std::endl;
 		_pyra.insert(_pyra.begin(), -1);	// -1 = Marker in pyra
-		x++;
 	}
 
-	if (1) {
+	if (DEBUG_PYRA) {
 		std::cout << "pyra :" << std::endl;
 		for (size_t i = 0; i < _pyra.size(); i++)
 		{
 			if (_pyra[i] == -1)
-				std::cout << "| ";
+				std::cout << std::endl;
 			else
 				std::cout << _pyra[i] << " ";
 		}
@@ -232,7 +211,7 @@ void PmergeMe::tests()	{
 void PmergeMe::sortVector()
 {
 
-	tests();
+	createPyra();
 	// if (DEBUG_SORT) displayVector();
 	// if (DEBUG_SORT) std::cout << "1/2 half sorted :" << std::endl;
 	// sortVectorNbis(&this->_data[0], &this->_data[2], 2, 1);			// 6
