@@ -42,8 +42,8 @@ class PmergeMe
 	void pushBackDeque(int n);
     std::size_t getDequeDataSize() const;
     void displayDeque() const;
-    std::string displayDequeString(int *arr, std::size_t n) const;
-    void sortDequeNbis(int *first, int *second, std::size_t nF, std::size_t nS);
+    std::string displayDequeString(std::size_t arr, std::size_t n) const;
+    void sortDequeNbis(std::size_t first, std::size_t second, std::size_t nF, std::size_t nS);
     bool checkDequePyra();
     void createDequePyra();
     void verifyDequeResult();

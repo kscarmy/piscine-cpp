@@ -16,6 +16,7 @@ OK :
 
 
 KO :
+ ./PmergeMe `shuf -i 1-193 -n 193 | tr "\n" " "`
 
 
 

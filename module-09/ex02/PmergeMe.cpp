@@ -257,18 +257,18 @@ void PmergeMe::displayDeque() const {
     std::cout << std::endl;
 }
 
-std::string PmergeMe::displayDequeString(int *arr, std::size_t n) const {
+std::string PmergeMe::displayDequeString(std::size_t arr, std::size_t n) const {
     std::string out = "";
     for (size_t i = 0; i < n; i++) {
         std::stringstream ss;
-        ss << arr[i];
+        ss << _dataD[arr + i];
         std::string str = ss.str();
         out += str + " ";
     }
     return out;
 }
 
-void PmergeMe::sortDequeNbis(int *first, int *second, std::size_t nF, std::size_t nS) {
+void PmergeMe::sortDequeNbis(std::size_t first, std::size_t second, std::size_t nF, std::size_t nS) {
     std::size_t fSize = 0;
     std::size_t sSize = 0;
     std::size_t i = 0;
@@ -280,51 +280,51 @@ void PmergeMe::sortDequeNbis(int *first, int *second, std::size_t nF, std::size_
     if (DEBUG_SORT) std::cout << "second : " << displayDequeString(second, nS) << std::endl;
 
     if (nF == 2 || nF == 3) {
-        if (first[0] > first[1]) {
-            std::swap(first[0], first[1]);
+        if (_dataD[first] > _dataD[first + 1]) {
+            std::swap(_dataD[first], _dataD[first + 1]);
         }
-        if (nF == 3 && first[1] > first[2]) {
-            std::swap(first[1], first[2]);
+        if (nF == 3 && _dataD[first + 1] > _dataD[first + 2]) {
+            std::swap(_dataD[first + 1], _dataD[first + 2]);
         }
-        if (nF == 3 && first[0] > first[1]) {
-            std::swap(first[0], first[1]);
+        if (nF == 3 && _dataD[first] > _dataD[first + 1]) {
+            std::swap(_dataD[first], _dataD[first + 1]);
         }
     }
     if (nS == 2 || nS == 3) {
-        if (second[0] > second[1]) {
-            std::swap(second[0], second[1]);
+        if (_dataD[second] > _dataD[second + 1]) {
+            std::swap(_dataD[second], _dataD[second + 1]);
         }
-        if (nS == 3 && second[1] > second[2]) {
-            std::swap(second[1], second[2]);
+        if (nS == 3 && _dataD[second + 1] > _dataD[second + 2]) {
+            std::swap(_dataD[second + 1], _dataD[second + 2]);
         }
-        if (nS == 3 && second[0] > second[1]) {
-            std::swap(second[0], second[1]);
+        if (nS == 3 && _dataD[second] > _dataD[second + 1]) {
+            std::swap(_dataD[second], _dataD[second + 1]);
         }
     }
 
     while (i < nF + nS) {
         if (fSize == nF) {
             while (sSize < nS) {
-                tmp.push_back(second[sSize]);
+                tmp.push_back(_dataD[second + sSize]);
                 sSize++;
             }
             break;
         }
         if (sSize == nS) {
             while (fSize < nF) {
-                tmp.push_back(first[fSize]);
+                tmp.push_back(_dataD[first + fSize]);
                 fSize++;
             }
             break;
         }
 
-        if (first[fSize] < second[sSize]) {
-            tmp.push_back(first[fSize]);
+        if (_dataD[first + fSize] < _dataD[second + sSize]) {
+            tmp.push_back(_dataD[first + fSize]);
             fSize++;
             continue;
         }
-        if (first[fSize] > second[sSize]) {
-            tmp.push_back(second[sSize]);
+        if (_dataD[first + fSize] > _dataD[second + sSize]) {
+            tmp.push_back(_dataD[second + sSize]);
             sSize++;
             continue;
         }
@@ -341,10 +341,10 @@ void PmergeMe::sortDequeNbis(int *first, int *second, std::size_t nF, std::size_
 
     /* copie tmp dans le deque */
     for (size_t i = 0; i < nF; i++) {
-        first[i] = tmp[i];
+        _dataD[first + i] = tmp[i];
     }
     for (size_t i = 0; i < nS; i++) {
-        second[i] = tmp[i + nF];
+        _dataD[second + i] = tmp[i + nF];
     }
 }
 
@@ -432,7 +432,7 @@ void PmergeMe::sortDeque() {
         } else {
             if (DEBUG_SORT) std::cout << "index : " << index << " pyra : " << _pyraD[i] << std::endl;
             if (DEBUG_SORT) std::cout << "index : " << index << " pyra +1 : " << _pyraD[i + 1] << std::endl;
-            sortDequeNbis(&this->_dataD[index], &this->_dataD[index + _pyraD[i]], _pyraD[i], _pyraD[i + 1]);
+            sortDequeNbis(index, index + _pyraD[i], _pyraD[i], _pyraD[i + 1]);
             index += _pyraD[i] + _pyraD[i + 1];
             i++;
         }
