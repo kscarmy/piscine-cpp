@@ -5,7 +5,7 @@
 # include <vector>
 # include <sstream>
 
-# define DEBUG_SORT 0
+# define DEBUG_SORT 1
 # define DEBUG_PYRA 1
 
 class PmergeMe

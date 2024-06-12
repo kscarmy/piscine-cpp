@@ -66,16 +66,31 @@ void PmergeMe::sortVectorNbis(int *first, int *second, std::size_t nF, std::size
 	std::size_t i = 0;
 	std::vector<int> tmp;
 
+
+	if (DEBUG_SORT) std::cout << "nF : " << nF << std::endl;
+	if (DEBUG_SORT) std::cout << "nS : " << nS << std::endl;
 	if (DEBUG_SORT) std::cout << "first : " << displayVectorString(first, nF) << std::endl;
 	if (DEBUG_SORT) std::cout << "second : " << displayVectorString(second, nS) << std::endl;
 
-	if (nF == 2)	{
+	if (nF == 2 || nF == 3)	{
 		if (first[0] > first[1])	{
 			std::swap(first[0], first[1]);
 		}
+		if (nF == 3 && first[1] > first[2])	{
+			std::swap(first[1], first[2]);
+		}
+		if (nF == 3 && first[0] > first[1])	{
+			std::swap(first[0], first[1]);
+		}
 	}
-	if (nS == 2)	{
+	if (nS == 2 || nS == 3)	{
 		if (second[0] > second[1])	{
+			std::swap(second[0], second[1]);
+		}
+		if (nS == 3 && second[1] > second[2])	{
+			std::swap(second[1], second[2]);
+		}
+		if (nS == 3 && second[0] > second[1])	{
 			std::swap(second[0], second[1]);
 		}
 	}
@@ -196,7 +211,7 @@ void PmergeMe::createPyra()	{
 	}
 
 	if (DEBUG_PYRA) {
-		std::cout << "pyra :" << std::endl;
+		std::cout << "pyra :";
 		for (size_t i = 0; i < _pyra.size(); i++)
 		{
 			if (_pyra[i] == -1)
@@ -212,20 +227,23 @@ void PmergeMe::sortVector()
 {
 
 	createPyra();
-	// if (DEBUG_SORT) displayVector();
-	// if (DEBUG_SORT) std::cout << "1/2 half sorted :" << std::endl;
-	// sortVectorNbis(&this->_data[0], &this->_data[2], 2, 1);			// 6
-	// // sortVectorNbis(&this->_data[0], &this->_data[2], 2, 2);		// 8
-	
-	// if (DEBUG_SORT) displayVector();
-	// if (DEBUG_SORT) std::cout << "2/2 half sorted :" << std::endl;
-	// sortVectorNbis(&this->_data[3], &this->_data[5], 2, 1);			// 6
-	// // sortVectorNbis(&this->_data[4], &this->_data[6], 2, 2);		// 8
 
-	// if (DEBUG_SORT) displayVector();
-	// if (DEBUG_SORT) std::cout << "all half sorted :" << std::endl;
-	// sortVectorNbis(&this->_data[0], &this->_data[3], 3, 3);			// 6
-	// // sortVectorNbis(&this->_data[0], &this->_data[4], 4, 4);		// 8
+	std::size_t index = 0;
+
+	for (size_t i = 0; i < _pyra.size(); i++)
+	{
+		if (_pyra[i] == -1)	{
+			index = 0;
+			continue;
+		}
+		else{
+			std::cout << "index : " << index << " pyra : " << _pyra[i] << std::endl;
+			std::cout << "index : " << index << " pyra +1 : " << _pyra[i + 1] << std::endl;
+			sortVectorNbis(&this->_data[index], &this->_data[index + _pyra[i + 1]], _pyra[i], _pyra[i + 1]);
+			index += _pyra[i] + _pyra[i + 1];
+			i++;
+		}
+	}
 
 }
 
