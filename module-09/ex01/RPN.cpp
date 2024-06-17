@@ -80,7 +80,23 @@ void RPN::calculate() {
 				std::list<std::string>::iterator second = it;
 				std::advance(second, -1);
 
-				*first = std::to_string(std::stoi(*first) + std::stoi(*second));
+				// *first = std::to_string(std::stoi(*first) + std::stoi(*second));
+				// Convert std::string to int using a stringstream
+				std::stringstream ssFirst(*first);
+				int intFirst;
+				ssFirst >> intFirst;
+
+				std::stringstream ssSecond(*second);
+				int intSecond;
+				ssSecond >> intSecond;
+
+				// Perform the addition
+				int result = intFirst + intSecond;
+
+				// Convert the result back to std::string
+				std::stringstream ssResult;
+				ssResult << result;
+				*first = ssResult.str();
 				_stack.erase(second);
 				it = _stack.erase(it);
 				break;
@@ -92,7 +108,23 @@ void RPN::calculate() {
 				std::list<std::string>::iterator second = it;
 				std::advance(second, -1);
 
-				*first = std::to_string(std::stoi(*first) - std::stoi(*second));
+				// *first = std::to_string(std::stoi(*first) - std::stoi(*second));
+				// Convert std::string to int using a stringstream
+				std::stringstream ssFirst(*first);
+				int intFirst;
+				ssFirst >> intFirst;
+
+				std::stringstream ssSecond(*second);
+				int intSecond;
+				ssSecond >> intSecond;
+
+				// Perform the addition
+				int result = intFirst - intSecond;
+
+				// Convert the result back to std::string
+				std::stringstream ssResult;
+				ssResult << result;
+				*first = ssResult.str();
 				_stack.erase(second);
 				it = _stack.erase(it);
 				break;
@@ -104,7 +136,23 @@ void RPN::calculate() {
 				std::list<std::string>::iterator second = it;
 				std::advance(second, -1);
 
-				*first = std::to_string(std::stoi(*first) * std::stoi(*second));
+				// *first = std::to_string(std::stoi(*first) * std::stoi(*second));
+				// Convert std::string to int using a stringstream
+				std::stringstream ssFirst(*first);
+				int intFirst;
+				ssFirst >> intFirst;
+
+				std::stringstream ssSecond(*second);
+				int intSecond;
+				ssSecond >> intSecond;
+
+				// Perform the addition
+				int result = intFirst * intSecond;
+
+				// Convert the result back to std::string
+				std::stringstream ssResult;
+				ssResult << result;
+				*first = ssResult.str();
 				_stack.erase(second);
 				it = _stack.erase(it);
 				break;
@@ -116,7 +164,23 @@ void RPN::calculate() {
 				std::list<std::string>::iterator second = it;
 				std::advance(second, -1);
 
-				*first = std::to_string(std::stoi(*first) / std::stoi(*second));
+				// *first = std::to_string(std::stoi(*first) / std::stoi(*second));
+				// Convert std::string to int using a stringstream
+				std::stringstream ssFirst(*first);
+				int intFirst;
+				ssFirst >> intFirst;
+
+				std::stringstream ssSecond(*second);
+				int intSecond;
+				ssSecond >> intSecond;
+
+				// Perform the addition
+				int result = intFirst / intSecond;
+
+				// Convert the result back to std::string
+				std::stringstream ssResult;
+				ssResult << result;
+				*first = ssResult.str();
 				_stack.erase(second);
 				it = _stack.erase(it);
 				break;
