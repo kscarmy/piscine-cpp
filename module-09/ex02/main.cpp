@@ -13,6 +13,17 @@ bool	isDigit(char *str)
 	return true;
 }
 
+bool hasDuplicate(int argc, char* argv[]) {
+    for (int i = 1; i < argc; ++i) {
+        for (int j = i + 1; j < argc; ++j) {
+            if (std::string(argv[i]) == std::string(argv[j])) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 int main(int argc, char **argv)
 {
     if (argc <= 2)	{
@@ -26,6 +37,11 @@ int main(int argc, char **argv)
 			return 1;
 		}
 	}
+
+	if (hasDuplicate(argc, argv)) {
+        std::cout << "Duplicate found" << std::endl;
+		return 1;
+    }
 
     PmergeMe fj;
 
